@@ -59,7 +59,7 @@ console.log("logoFillColor:", logoFillColor);
 
 <div className='flex gap-5'>
 <FacebookShareButton url={url}>
-                <FacebookIcon logoFillColor={logoFillColor} />
+                <FacebookIcon logoFillColor={logoFillColor}  title={'sharing happiness'} />
             </FacebookShareButton>
 {/* <FacebookShareButton url={`https://www.bd24live.com/bangla/731486`} >  fb share</FacebookShareButton> */}
    {/* <ShareButton postId={`/details/${postData.id}`}/> */}

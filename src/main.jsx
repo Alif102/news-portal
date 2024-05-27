@@ -11,6 +11,7 @@ import {
 // import SecondHomePage from './Pages/SecondHomePage/SecondHomePage';
 import Root from './Root/Root';
 import DetailPage from './Pages/SecondHomePage/DetailPage';
+import Sports from './Pages/Sportspage/Sports';
 
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
        
         
 
+      },
+      {
+        path: '/স্পোর্টস',
+        element: <Sports/>
       },
    
       {
