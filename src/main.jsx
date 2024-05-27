@@ -31,7 +31,7 @@ const router = createBrowserRouter([
       {
         path : '/details/:id',
         element:  <DetailPage/>,
-        loader : ()=>  fetch('http://admin.desh365.top/api/all-post')
+        loader : ()=>  fetch('https://admin.desh365.top/api/all-post')
         
       },
     ]

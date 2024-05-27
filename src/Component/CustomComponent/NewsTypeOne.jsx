@@ -11,7 +11,7 @@ const NewsTypeOne = () => {
    const reloadPageWithDelay = () => {
     setTimeout(() => {
       window.location.reload();
-    }, 1000); // 2 seconds delay
+    }, 1000); 
   };
  
  
@@ -27,6 +27,8 @@ const NewsTypeOne = () => {
  
      fetchPosts();
    }, []);
+
+   
  
     return (
       <div>
@@ -44,7 +46,7 @@ const NewsTypeOne = () => {
 
 
                   {posts.map(post => {
-        const imageUrl = `http://admin.desh365.top/public/storage/post-image/${post.image}`;
+        const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
         
         return (
        

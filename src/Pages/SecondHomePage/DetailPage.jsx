@@ -40,7 +40,7 @@ const DetailPage = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://admin.desh365.top/api/post/${id}`);
+          const response = await axios.get(`https://admin.desh365.top/api/post/${id}`);
           
           
           setPostData(response.data.data);
@@ -60,7 +60,7 @@ const DetailPage = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get(`http://admin.desh365.top/api/post/${id}`);
+          const response = await axios.get(`https://admin.desh365.top/api/post/${id}`);
           
           
           setRelated(response.data.related_post);

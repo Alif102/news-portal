@@ -21,7 +21,7 @@ const Page1 = ({ data }) => {
     return <div>Loading...</div>; // Or any fallback content
   }
 
-  const imageUrl = `http://desh365.top/public/storage/post-image/${data?.image}`;
+  const imageUrl = `https://admin.desh365.top/public/storage/post-image/${data?.image}`;
 
 
   return (

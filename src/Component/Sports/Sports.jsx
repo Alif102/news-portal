@@ -21,13 +21,11 @@ const Sports = () => {
                     </div>
                 </div>
 
-                <div className='col-span-4'>
+                <div className='col-span-8'>
                     <NewsDiv2 />
                 </div>
 
-                <div className='col-span-4'>
-                    <NewsDiv2/>
-                </div>
+               
 
 
 

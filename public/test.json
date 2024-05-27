@@ -1,36 +1,54 @@
 {
     "status": true,
-    "message": "post get Successfully!",
-    "data": {
-        "id": 1,
-        "category_id": 2,
-        "short_url": "post/dufuyhdbfcdsfcsdf",
-        "title": "dufuyhdbfcdsfcsdf",
-        "post_body": "<p>dfdgvdgvdfvdfvdfvdfvbdfvdfvdfv</p>",
-        "image": "2471_1716318407.webp",
-        "created_at": "2024-05-22T06:07:34.000000Z",
-        "updated_at": "2024-05-22T06:07:34.000000Z",
-        "Category_name": "sports",
-        "category": {
-            "id": 2,
-            "name": "sports"
-           
-        }
-    },
-    "related_post": [
+    "message": "All posts get successfully!",
+    "data": [
         {
-            "id": 1,
-            "category_id": 2,
-            "short_url": "post/dufuyhdbfcdsfcsdf",
-            "title": "dufuyhdbfcdsfcsdf"
+            "id": 2,
+            "title": "৪৫ ডিগ্রি তাপমাত্রায় হিট স্ট্রোক: শাহরুখ খান কেমন আছেন, জানালেন বন্ধু জুহি চাওলা",      
+            "category_name": "বাণিজ্য",
+            "category": {
+                "id": 3,
+                "name": "বাণিজ্য",
+                "slug": null,
+                "parent_id": null,
+                "level": null,
+                "short_url": "category/বাণিজ্য",
+                "image": "5525_1716463812.webp",
+                "created_at": "2024-05-23T11:31:16.000000Z",
+                "updated_at": "2024-05-23T11:31:16.000000Z"
+            }
         },
         {
-            "id": 2,
-            "category_id": 2,
-            "short_url": "post/today news",
-            "title": "today news"
-            
+            "id": 1,
+            "title": "খুলনার শীর্ষ চরমপন্থী নেতা শিমুলই হলেন আমানুল্লাহ",   
+            "category_name": "বাণিজ্য",
+            "category": {
+                "id": 3,
+                "name": "বাণিজ্য",
+                "slug": null,
+                "parent_id": null,
+                "level": null,
+                "short_url": "category/বাণিজ্য",
+                "image": "5525_1716463812.webp",
+                "created_at": "2024-05-23T11:31:16.000000Z",
+                "updated_at": "2024-05-23T11:31:16.000000Z"
+            }
+        },
+        {
+            "id": 6,
+            "title": "খুলনার শীর্ষ চরমপন্থী নেতা শিমুলই হলেন আমানুল্লাহ",
+            "category_name": "বিনোদন",
+            "category": {
+                "id": 6,
+                "name": "বিনোদন",
+                "slug": null,
+                "parent_id": null,
+                "level": null,
+                "short_url": "category/বিনোদন",
+                "image": "5525_1716463812.webp",
+                "created_at": "2024-05-23T11:31:16.000000Z",
+                "updated_at": "2024-05-23T11:31:16.000000Z"
+            }
         }
-       
     ]
 }

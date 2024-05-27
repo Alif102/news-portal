@@ -12,17 +12,11 @@ const RightThird = ({allposts}) => {
 
   // Fetch Data
   const [posts, setPosts] = useState([]);
-  // console.log(posts)
-
-  
-  
-
-
-
+ 
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get('http://admin.desh365.top/api/all-post');
+        const response = await axios.get('https://admin.desh365.top/api/all-post');
         setPosts(response.data.data);
       } catch (error) {
         console.error('Error fetching the posts:', error);
@@ -41,11 +35,11 @@ const RightThird = ({allposts}) => {
     <div>
 
 
-<div className=' '>
+<div className='shadow-xl w-[100%] mt-4 h-[390px] overflow-x-scroll '>
 
-<div className=' flex flex-col space-y-4 gap-3 py-4'>
+<div className=' flex  flex-col space-y-4 gap-3 py-4'>
 {posts.map(post => {
-        const imageUrl = `http://desh365.top/public/storage/post-image/${post.image}`;
+        const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
         
         return (
          <Link to={`/details/${post?.id}`}>
