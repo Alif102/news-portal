@@ -18,7 +18,7 @@ const ShareButton = ({ postId }) => {
           window.FB.ui({
             method: 'share',
             // href: `https://www.bd24live.com${postId}`,
-             href: `https://news-blog-teal.vercel.app/${postId}`,
+             href: `https://news-portal-gray.vercel.app/${postId}`,
               
           }, function(response){});
         }

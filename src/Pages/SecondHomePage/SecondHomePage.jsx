@@ -44,6 +44,9 @@ const SecondHomePage = ({ related, postData }) => {
 
   
   // https://news-blog-teal.vercel.app/
+
+
+  
   return (
     <div className="container mx-auto">
       <div className="grid md:grid-cols-12 md:mx-12 mx-2 gap-6 lg:grid-cols-12 grid-cols-1">
