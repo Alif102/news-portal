@@ -8,10 +8,7 @@ import PostBody from '../../Component/PostBody';
 import Loader from '../../Component/Loader/Loader';
 import { FacebookShareButton, FacebookIcon } from "react-share"
 const SecondHomePage = ({ related, postData }) => {
-  // const handleClick = () => {
-  //   // Redirect to the post's URL
-  //   window.location.href = url;
-  // };
+ 
   if (!postData) {
     return <div className='text-center'>
       <Loader />
