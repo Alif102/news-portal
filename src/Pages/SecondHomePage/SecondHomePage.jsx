@@ -5,12 +5,8 @@ import NewsTabs from '../Home/RightSide/NewsTabs';
 import NewsCard from '../../Component/NewsCard';
 import PostBody from '../../Component/PostBody';
 // import { RiFacebookBoxFill } from "react-icons/ri"; 
-
 import Loader from '../../Component/Loader/Loader';
-import ShareIcons from '../../Component/Shared/ShareIcons';
-import { Link } from 'react-router-dom';
-import ShareButton from '../../Component/Shared/ShareButton';
-
+import { FacebookShareButton, FacebookIcon } from "react-share"
 const SecondHomePage = ({ related, postData }) => {
   // const handleClick = () => {
   //   // Redirect to the post's URL
@@ -31,21 +27,17 @@ const SecondHomePage = ({ related, postData }) => {
   }
 
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
-  // const shareOnFacebook = () => {
-  //   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(http://localhost:5173/details/${postData.id})}`, '_blank');
-  // };
-
-  const shareOnFacebookk = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('http://localhost:5173/details/' + postData.id)}`, '_blank');
-};
-  const postUrl = window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('http://localhost:5173/details/' + postData.id)}`, '_blank');
-
-  const postTitle = "My awesome post";
-
   
-  // https://news-blog-teal.vercel.app/
 
 
+;
+
+const url = "https://news-portal-gray.vercel.app/details/6";
+const logoFillColor = "white";
+  
+
+console.log("URL:", url);
+console.log("logoFillColor:", logoFillColor);
 
   return (
     <div className="container mx-auto">
@@ -63,12 +55,26 @@ const SecondHomePage = ({ related, postData }) => {
             {/* <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
             Share on Facebook
         </a> */}
-   <ShareButton postId={postData.id}/>
-   {/* <ShareButton postId={`/bangla/731486`} /> */}
+
+
+<div className='flex gap-5'>
+<FacebookShareButton url={url}>
+                <FacebookIcon logoFillColor={logoFillColor} />
+            </FacebookShareButton>
+{/* <FacebookShareButton url={`https://www.bd24live.com/bangla/731486`} >  fb share</FacebookShareButton> */}
+   {/* <ShareButton postId={`/details/${postData.id}`}/> */}
+    {/* <ShareButton postId={`/bangla/731486`} /> */}
+</div>
+  
 
         
             <div class="py-5">
-                    <ShareIcons style={{ cursor: 'pointer' }} url={postUrl} title={postTitle} />
+            {/* <ShareSocial  
+  url ="url_to_share.com"
+  socialTypes= {['facebook','twitter']}
+  onSocialButtonClicked={ data => console.log(data)}    
+/> */}
+                    {/* <ShareIcons style={{ cursor: 'pointer' }} url={postUrl} title={postTitle} /> */}
                     <br/>
                     <hr/>
                   </div>

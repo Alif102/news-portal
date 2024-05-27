@@ -6,7 +6,7 @@ const PostBody = ({ postBody }) => {
   const sanitizedHTML = DOMPurify.sanitize(postBody);
 
   return (
-    <div
+    <div className='m-0 p-2 '
       dangerouslySetInnerHTML={{ __html: sanitizedHTML }}
     />
   );

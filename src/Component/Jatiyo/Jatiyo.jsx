@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 // import NewsDiv2 from '../../Pages/Home/RightSide/NewsDiv2'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import PostBody from '../PostBody';
 // import PostBody from '../../Component/PostBody';
 
 const Jatiyo = () => {
@@ -16,7 +17,7 @@ const Jatiyo = () => {
             const response = await axios.get('https://admin.desh365.top/api/all-post');
             console.log('Response data:', response.data.data); 
            
-            const filteredPosts = response.data.data.filter(post => post.category_name === "জাতীয় ");
+            const filteredPosts = response.data.data.filter(post => post.category_name === "জাতীয়");
             setPosts(filteredPosts);
             // setPosts(response.data.data);
           } catch (error) {
@@ -26,18 +27,18 @@ const Jatiyo = () => {
     
         fetchData();
       }, []);
-
+console.log(posts)
     console.log(posts[0])
     //  const slicedPostBody = posts[0].post_body.slice(0, 50);
    
     return (
         <div>
-            <p className='font-bold text-xl m-6 ml-10'>জাতীয় </p>
+           
 
-            <div className='grid md:grid-cols-12 md:mx-10 mx-2 gap-6 lg:grid-cols-12 grid-cols-1'>
+            <div  className='flex flex-1 gap-3 mt-4'>
 
 
-                <div className='col-span-4'>
+                <div className=''>
                     {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
                     {posts.length > 0 && (
             <div className='space-y-4'>
@@ -45,6 +46,11 @@ const Jatiyo = () => {
               <h1 className='text-xl font-bold'>
                 {posts[0].title}
               </h1>
+{/*             
+                <div >
+                <PostBody className='text-[10px]' postBody={posts[0].post_body} />
+                </div> */}
+              
             </div>
           )}
                   
@@ -52,7 +58,7 @@ const Jatiyo = () => {
                 </div>
 
 
-                <div className='col-span-4'>
+                <div className=''>
                 <div>
     
                 <div className=' flex flex-col space-y-4 gap-3 py-4'>
