@@ -13,8 +13,8 @@ const SecondHomePage = ({ related, postData }) => {
   //   window.location.href = url;
   // };
   if (!postData) {
-    return <div className='text-center'> 
-    <Loader/>
+    return <div className='text-center'>
+      <Loader />
     </div> // Or any fallback content
   }
 
@@ -23,21 +23,21 @@ const SecondHomePage = ({ related, postData }) => {
     window.FB.ui({
       method: 'share',
       href: `http://localhost:5173/details//${postData.id}`, // Replace with your actual website URL
-    }, function(response){});
+    }, function (response) { });
   }
 
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
-  
 
 
-;
 
-const url = "https://news-portal-gray.vercel.app/details/6";
-const logoFillColor = "white";
-  
+  ;
 
-console.log("URL:", url);
-console.log("logoFillColor:", logoFillColor);
+  const url = "https://news-portal-gray.vercel.app/স্পোর্টস";
+  const logoFillColor = "white";
+
+
+  console.log("URL:", url);
+  console.log("logoFillColor:", logoFillColor);
 
   return (
     <div className="container mx-auto">
@@ -52,32 +52,32 @@ console.log("logoFillColor:", logoFillColor);
 
           <div className="grid md:grid-cols-8 grid-cols-1 gap-6">
             <div className="md:col-span-5 col-span-1">
-            {/* <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
+              {/* <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
             Share on Facebook
         </a> */}
 
 
-<div className='flex gap-5'>
-<FacebookShareButton url={url}>
-                <FacebookIcon logoFillColor={logoFillColor}  title={'sharing happiness'} />
-            </FacebookShareButton>
-{/* <FacebookShareButton url={`https://www.bd24live.com/bangla/731486`} >  fb share</FacebookShareButton> */}
-   {/* <ShareButton postId={`/details/${postData.id}`}/> */}
-    {/* <ShareButton postId={`/bangla/731486`} /> */}
-</div>
-  
+              <div className='flex gap-5'>
+                <FacebookShareButton url={url}>
+                  <FacebookIcon logoFillColor={logoFillColor} title={'sharing happiness'} />
+                </FacebookShareButton>
+                {/* <FacebookShareButton url={`https://www.bd24live.com/bangla/731486`} >  fb share</FacebookShareButton> */}
+                {/* <ShareButton postId={`/details/${postData.id}`}/> */}
+                {/* <ShareButton postId={`/bangla/731486`} /> */}
+              </div>
 
-        
-            <div class="py-5">
-            {/* <ShareSocial  
+
+
+              <div class="py-5">
+                {/* <ShareSocial  
   url ="url_to_share.com"
   socialTypes= {['facebook','twitter']}
   onSocialButtonClicked={ data => console.log(data)}    
 /> */}
-                    {/* <ShareIcons style={{ cursor: 'pointer' }} url={postUrl} title={postTitle} /> */}
-                    <br/>
-                    <hr/>
-                  </div>
+                {/* <ShareIcons style={{ cursor: 'pointer' }} url={postUrl} title={postTitle} /> */}
+                <br />
+                <hr />
+              </div>
               <h1 className="box-text1 md:block sm:text-center md:text-start my-2 text-sm md:text-xl lg:text-2xl mt-3">
                 {postData.title}
               </h1>
@@ -89,7 +89,7 @@ console.log("logoFillColor:", logoFillColor);
 
               <div className="flex items-center justify-center my-3 mx-auto w-[50%] h-[250px] font-bold bg-[#D9D9D9]">ADD</div>
 
-             
+
             </div>
             <div className="md:col-span-3 col-span-1">
               <Add />
