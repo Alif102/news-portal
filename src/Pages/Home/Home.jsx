@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Jatiyo from './RightSide/Jatiyo'
 import National from './RightSide/National'
+import BreakingNewsSlider from '../BreakingNews/BreakingNewsSlider'
 
 const Home = () => {
 
@@ -61,10 +62,11 @@ const Home = () => {
 
             <div className='md:col-span-5  col-span-1'>
               <div>
-                <div className='w-[100%] mx-auto h-[350px] mt-5 bg-[#D9D9D9]'>
+              <BreakingNewsSlider/>
+                {/* <div className='w-[100%] mx-auto h-[350px] mt-5 bg-[#D9D9D9]'>
+                 
 
-                </div>
-                <h1 className="box-text1 md:block sm:text-center md:text-start text-sm md:text-xl lg:text-2xl mt-3">কায়রো থেকে মরুভূমিতে রাজধানী সরিয়ে নিচ্ছে মিসর</h1>
+                </div> */}
               </div>
 
             </div>
@@ -77,6 +79,7 @@ const Home = () => {
 
 
           </div>
+
 
           <Add />
           <div className='grid  md:grid-cols-8 grid-cols-1 pt-4 space-y-2 pb-5'>
