@@ -1,4 +1,4 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
 import Leftside from './Leftside/Leftside';
 import Add from '../Home/RightSide/Add';
 import NewsTabs from '../Home/RightSide/NewsTabs';
@@ -15,21 +15,21 @@ const SecondHomePage = ({ related, postData }) => {
     </div> // Or any fallback content
   }
 
-  const shareOnFacebook = () => {
-    // Initialize Facebook SDK (make sure you have included the SDK script)
-    window.FB.ui({
-      method: 'share',
-      href: `http://localhost:5173/details//${postData.id}`, // Replace with your actual website URL
-    }, function (response) { });
-  }
+  // const shareOnFacebook = () => {
+  //   // Initialize Facebook SDK (make sure you have included the SDK script)
+  //   window.FB.ui({
+  //     method: 'share',
+  //     href: `http://localhost:5173/details//${postData.id}`, // Replace with your actual website URL
+  //   }, function (response) { });
+  // }
 
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
 
 
 
-  ;
+  
 
-  const url = "https://news-portal-gray.vercel.app/details/5";
+  const url = `https://news-portal-gray.vercel.app/details/${postData.id}`;
   const logoFillColor = "white";
 
 
@@ -65,7 +65,7 @@ const SecondHomePage = ({ related, postData }) => {
 
 
 
-              <div class="py-5">
+              <div className="py-5">
                 {/* <ShareSocial  
   url ="url_to_share.com"
   socialTypes= {['facebook','twitter']}
