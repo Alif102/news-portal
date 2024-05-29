@@ -30,7 +30,7 @@ const SecondHomePage = ({ related, postData }) => {
 
   
 
-  const url = `https://news-portal-gray.vercel.app/details/${postData.id}`;
+  const url = `https://news-portal-gray.vercel.app`;
   const logoFillColor = "white";
 
 
