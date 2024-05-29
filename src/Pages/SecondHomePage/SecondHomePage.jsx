@@ -67,7 +67,7 @@ const SecondHomePage = ({ related, postData }) => {
 
   
 
-  const url = `https://desh365.top/details/8`;
+  const url = `https://desh365.top/details/${postData.id}`;
   const logoFillColor = "white";
 
   const handleShareButtonClick = () => {
