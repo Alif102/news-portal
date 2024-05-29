@@ -12,6 +12,7 @@ import {
 import Root from './Root/Root';
 import DetailPage from './Pages/SecondHomePage/DetailPage';
 import Sports from './Pages/Sportspage/Sports';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -45,8 +46,11 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <HelmetProvider>
+     <React.StrictMode>
     <RouterProvider router={router} />
   
   </React.StrictMode>,
+  </HelmetProvider>
+ 
 )

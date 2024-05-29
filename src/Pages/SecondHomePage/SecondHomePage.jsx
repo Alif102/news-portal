@@ -7,6 +7,7 @@ import PostBody from '../../Component/PostBody';
 // import { RiFacebookBoxFill } from "react-icons/ri"; 
 import Loader from '../../Component/Loader/Loader';
 import { FacebookShareButton, FacebookIcon } from "react-share"
+import { Helmet } from 'react-helmet';
 const SecondHomePage = ({ related, postData }) => {
  
   if (!postData) {
@@ -37,6 +38,12 @@ const SecondHomePage = ({ related, postData }) => {
   console.log("logoFillColor:", logoFillColor);
 
   return (
+
+    <div>
+      <Helmet>
+        <title>News Portal Details Page</title>
+      </Helmet>
+    
     <div className="container mx-auto">
       <div className="grid md:grid-cols-12 md:mx-12 mx-2 gap-6 lg:grid-cols-12 grid-cols-1">
         <div className="col-span-2 hidden md:block order-last md:order-first">
@@ -103,7 +110,7 @@ const SecondHomePage = ({ related, postData }) => {
           <NewsCard related={related} />
         </div>
       </div>
-    </div>
+    </div></div>
   );
 };
 
