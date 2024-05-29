@@ -37,7 +37,7 @@ const BreakingNewsSlider = () => {
                 return (
                   <Link to={`/details/${post?.id}`}>
                     <div className='' key={post?.id}>
-                      {/* <img className='w-full h-[350px]' src={imageUrl} alt={post.title} /> */}
+                
 
                       <div class="relative max-w-xl mx-auto mt-20">
     <img class="w-full h-[350px] object-cover rounded-md" src={imageUrl} alt={post.title}/>

@@ -7,7 +7,8 @@ import PostBody from '../../Component/PostBody';
 // import { RiFacebookBoxFill } from "react-icons/ri"; 
 import Loader from '../../Component/Loader/Loader';
 import { FacebookShareButton, FacebookIcon } from "react-share"
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
+import { useEffect, useState } from 'react';
 const SecondHomePage = ({ related, postData }) => {
  
   if (!postData) {
@@ -15,6 +16,42 @@ const SecondHomePage = ({ related, postData }) => {
       <Loader />
     </div> // Or any fallback content
   }
+
+  const [currentUrl, setCurrentUrl] = useState(""); // State to hold the current URL
+
+  useEffect(() => {
+    // Update current URL when component mounts
+    setCurrentUrl(window.location.href);
+  }, []);
+  useEffect(() => {
+    if (postData) {
+      // Update document title
+      document.title = postData.title;
+
+      // Update meta tags for Facebook Open Graph
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) {
+        ogTitle.setAttribute('content', postData.title);
+      }
+
+      // const ogDescription = document.querySelector('meta[property="og:description"]');
+      // if (ogDescription) {
+      //   ogDescription.setAttribute('content', postData.description);
+      // }
+
+      // Assuming your postData has an image URL field
+      const ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage) {
+        ogImage.setAttribute('content', postData.imageUrl);
+      }
+
+      // Assuming your postData has a URL field
+      const ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) {
+        ogUrl.setAttribute('content', postData.url);
+      }
+    }
+  }, [postData]);
 
   // const shareOnFacebook = () => {
   //   // Initialize Facebook SDK (make sure you have included the SDK script)
@@ -30,10 +67,16 @@ const SecondHomePage = ({ related, postData }) => {
 
   
 
-  const url = `https://news-portal-gray.vercel.app`;
+  const url = `https://desh365.top/details/8`;
   const logoFillColor = "white";
 
-
+  const handleShareButtonClick = () => {
+    // Open Facebook share dialog
+    window.FB.ui({
+      method: 'share',
+      href: currentUrl
+    }, function(response){});
+  }
   console.log("URL:", url);
   console.log("logoFillColor:", logoFillColor);
 
@@ -62,6 +105,7 @@ const SecondHomePage = ({ related, postData }) => {
 
 
               <div className='flex gap-5'>
+              <button onClick={handleShareButtonClick}>Share on Facebook</button>
                 <FacebookShareButton url={url}>
                   <FacebookIcon logoFillColor={logoFillColor} title={'sharing happiness'} />
                 </FacebookShareButton>
