@@ -52,8 +52,8 @@ const Naavbar = () => {
   return (
     <div>
        
-      <div className="bg-gray-200  w-[92%] mx-auto ">
-        <nav className="bg-gray-100 flex text-gray-800 items-center justify-between flex-wrap pb-2 px-5">
+      <div className="  w-[92%] mx-auto ">
+        <nav className=" flex text-gray-800 items-center justify-between flex-wrap pb-2 px-5">
           <div>
             {/* <span className="font-semibold text-1xl text-gray-900">Mews </span> */}
            <Link to='/'> <img className='h-[80px] w-[70%] py-1 rounded-md' src={logo} alt="logo" /></Link>
@@ -61,7 +61,7 @@ const Naavbar = () => {
           <div className="block lg:hidden">
             <button
               onClick={toggleNav}
-              className="flex flex-col px-3 py-2 border rounded border-gray-800 hover:text-white hover:border-white"
+              className="flex flex-col px-3 py-4 mt-2 border rounded border-gray-800 hover:text-white hover:border-white"
             >
               <div className="w-6 h-1 bg-black"></div>
               <div className="w-6 h-1 bg-black my-1"></div>

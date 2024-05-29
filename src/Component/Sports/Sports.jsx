@@ -10,7 +10,7 @@ const Sports = () => {
 
 
                 <div className='col-span-4'>
-                    <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div>
+                    <div className='w-[100%] h-[200px] mb-3 bg-[#D9D9D9]'></div>
                     <div className='space-y-4'>
                         <h1 className=' text-xl font-bold'>
                         সিরিজ জিতে মুশফিকের অন্যরকম উদযাপন

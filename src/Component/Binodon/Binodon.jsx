@@ -42,7 +42,7 @@ const Binodon = () => {
 
           {posts.length > 0 && (
             <div className='space-y-4'>
-              <img className='w-[95%] h-full mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
+              <img className='w-[100%] h-full mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
               <h1 className='text-xl font-bold'>
                 {posts[0].title}
               </h1>
@@ -77,7 +77,7 @@ const Binodon = () => {
         </div>
 
         <div className='col-span-4'>
-          <div className="flex items-center justify-center w-[90%] h-[350px]  font-bold bg-[#D9D9D9]">ADD</div>
+          <div className="flex items-center justify-center w-[100%] h-[350px]  font-bold bg-[#D9D9D9]">ADD</div>
         </div>
 
 

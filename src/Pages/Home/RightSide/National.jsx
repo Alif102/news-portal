@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import NewsDiv2 from './NewsDiv2'
 import Jatiyo from '../../../Component/Jatiyo/Jatiyo'
 const National = () => {
 

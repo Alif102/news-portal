@@ -8,7 +8,8 @@ import PostBody from '../../Component/PostBody';
 import Loader from '../../Component/Loader/Loader';
 import { FacebookShareButton, FacebookIcon } from "react-share"
 import { Helmet } from 'react-helmet-async';
-import { useEffect, useState } from 'react';
+import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageChange';
+import { Link } from 'react-router-dom';
 const SecondHomePage = ({ related, postData }) => {
  
   if (!postData) {
@@ -17,49 +18,7 @@ const SecondHomePage = ({ related, postData }) => {
     </div> // Or any fallback content
   }
 
-  const [currentUrl, setCurrentUrl] = useState(""); // State to hold the current URL
-
-  useEffect(() => {
-    // Update current URL when component mounts
-    setCurrentUrl(window.location.href);
-  }, []);
-  useEffect(() => {
-    if (postData) {
-      // Update document title
-      document.title = postData.title;
-
-      // Update meta tags for Facebook Open Graph
-      const ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) {
-        ogTitle.setAttribute('content', postData.title);
-      }
-
-      // const ogDescription = document.querySelector('meta[property="og:description"]');
-      // if (ogDescription) {
-      //   ogDescription.setAttribute('content', postData.description);
-      // }
-
-      // Assuming your postData has an image URL field
-      const ogImage = document.querySelector('meta[property="og:image"]');
-      if (ogImage) {
-        ogImage.setAttribute('content', postData.imageUrl);
-      }
-
-      // Assuming your postData has a URL field
-      const ogUrl = document.querySelector('meta[property="og:url"]');
-      if (ogUrl) {
-        ogUrl.setAttribute('content', postData.url);
-      }
-    }
-  }, [postData]);
-
-  // const shareOnFacebook = () => {
-  //   // Initialize Facebook SDK (make sure you have included the SDK script)
-  //   window.FB.ui({
-  //     method: 'share',
-  //     href: `http://localhost:5173/details//${postData.id}`, // Replace with your actual website URL
-  //   }, function (response) { });
-  // }
+ 
 
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
 
@@ -79,13 +38,17 @@ const SecondHomePage = ({ related, postData }) => {
   }
   console.log("URL:", url);
   console.log("logoFillColor:", logoFillColor);
-
+const shareOnFacebook = () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=https://news-portal-gray.vercel.app/details/${postData.id}`, '_blank');
+};
   return (
 
     <div>
       <Helmet>
-        <title>News Portal Details Page</title>
+        {/* <title>News Portal Details Page</title> */}
+        <meta property="og:title" content={postData.title} />
       </Helmet>
+    <ScrollToTopOnPageChange/>
     
     <div className="container mx-auto">
       <div className="grid md:grid-cols-12 md:mx-12 mx-2 gap-6 lg:grid-cols-12 grid-cols-1">
@@ -99,19 +62,24 @@ const SecondHomePage = ({ related, postData }) => {
 
           <div className="grid md:grid-cols-8 grid-cols-1 gap-6">
             <div className="md:col-span-5 col-span-1">
-              {/* <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
+              <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
             Share on Facebook
-        </a> */}
+        </a>
 
 
               <div className='flex gap-5'>
               <button onClick={handleShareButtonClick}>Share on Facebook</button>
-                <FacebookShareButton url={url}>
-                  <FacebookIcon logoFillColor={logoFillColor} title={'sharing happiness'} />
-                </FacebookShareButton>
+               <Link onClick={shareOnFacebook}>
+               <FacebookShareButton  >
+                  <FacebookIcon logoFillColor={logoFillColor}   />
+                </FacebookShareButton></Link>
                 {/* <FacebookShareButton url={`https://www.bd24live.com/bangla/731486`} >  fb share</FacebookShareButton> */}
                 {/* <ShareButton postId={`/details/${postData.id}`}/> */}
                 {/* <ShareButton postId={`/bangla/731486`} /> */}
+
+                <FacebookShareButton url={window.location.href} > 
+      <h1>share</h1>
+ </FacebookShareButton>
               </div>
 
 

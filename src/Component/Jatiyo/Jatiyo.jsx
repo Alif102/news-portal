@@ -35,7 +35,7 @@ console.log(posts)
         <div>
            
 
-            <div  className='flex flex-1 gap-3 mt-4'>
+            <div  className='flex flex-1 md:flex-row flex-col gap-3 mt-4'>
 
 
                 <div className=''>
@@ -67,7 +67,7 @@ console.log(posts)
         
         return (
          <Link to={`/details/${post?.id}`}>
-          <div className='flex gap-2' key={post?.id}>
+          <div className='flex  gap-2' key={post?.id}>
                         <img className='w-24 h-24' src={imageUrl} alt={post.title} />
 
             <h2>{post.title}</h2>
