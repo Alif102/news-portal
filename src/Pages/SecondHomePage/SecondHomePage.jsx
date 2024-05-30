@@ -72,24 +72,21 @@ const shareOnFacebook = () => {
     rel="noopener noreferrer"
     
   >
-    <h1>shareee</h1>
+    <h1>share facebook</h1>
   </a>
 
 
-              <div className='flex gap-5'>
+              {/* <div className='flex gap-5'>
               <button onClick={handleShareButtonClick}>Share on Facebook</button>
                <Link onClick={shareOnFacebook}>
                <FacebookShareButton  >
                   <FacebookIcon logoFillColor={logoFillColor}   />
                 </FacebookShareButton></Link>
-                {/* <FacebookShareButton url={`https://www.bd24live.com/bangla/731486`} >  fb share</FacebookShareButton> */}
-                {/* <ShareButton postId={`/details/${postData.id}`}/> */}
-                {/* <ShareButton postId={`/bangla/731486`} /> */}
-
+               
                 <FacebookShareButton url={window.location.href} > 
       <h1>share</h1>
  </FacebookShareButton>
-              </div>
+              </div> */}
 
 
 
