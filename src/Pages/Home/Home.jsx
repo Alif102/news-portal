@@ -12,6 +12,7 @@ import Jatiyo from './RightSide/Jatiyo'
 import National from './RightSide/National'
 import BreakingNewsSlider from '../BreakingNews/BreakingNewsSlider'
 import { Helmet } from 'react-helmet-async'
+import CommonPage from '../../Component/CommonPage/CommonPage'
 
 const Home = () => {
 
@@ -108,7 +109,7 @@ const Home = () => {
 
 
       </div>
-
+{/* <CommonPage/> */}
     </div>
   )
 }

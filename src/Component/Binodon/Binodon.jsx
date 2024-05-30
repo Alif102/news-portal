@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import NewsDiv2 from '../../Pages/Home/RightSide/NewsDiv2'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import PostBody from '../../Component/PostBody';
 
 const Binodon = () => {
 
@@ -14,7 +12,7 @@ const Binodon = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        console.log('Response data:', response.data.data);
+        // console.log('Response data:', response.data.data);
 
         const filteredPosts = response.data.data.filter(post => post.category_name === "বাণিজ্য");
         setPosts(filteredPosts);
@@ -27,7 +25,7 @@ const Binodon = () => {
     fetchData();
   }, []);
 
-  console.log(posts)
+  // console.log(posts)
   //  const slicedPostBody = posts[0].post_body.slice(0, 50);
 
   return (

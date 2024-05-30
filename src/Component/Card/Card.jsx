@@ -11,13 +11,13 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        console.log('Response data:', response.data.data);
+        // console.log('Response data:', response.data.data);
 
         const filteredrajnity = response.data.data.filter(post => post.category_name === "রাজনীতি");
         setRajnity(filteredrajnity);
         // setPosts(response.data.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       }
     };
 
@@ -29,13 +29,13 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        console.log('Response data:', response.data.data);
+        // console.log('Response data:', response.data.data);
 
         const filteredKrishi = response.data.data.filter(post => post.category_name === "কৃষি ও অর্থ");
         setKrishi(filteredKrishi);
         // setPosts(response.data.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       }
     };
 
@@ -48,20 +48,20 @@ const Card = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        console.log('Response data:', response.data.data);
+        // console.log('Response data:', response.data.data);
 
         const filteredsastho = response.data.data.filter(post => post.category_name === "স্বাস্থ্য ও চিকিৎসা");
         setSastho(filteredsastho);
         // setPosts(response.data.data);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        // console.error('Error fetching data:', error);
       }
     };
 
     fetchData();
   }, []);
 
-  console.log(krishi)
+  // console.log(krishi)
 
 
   return (

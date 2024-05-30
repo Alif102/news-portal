@@ -78,7 +78,7 @@ const Naavbar = () => {
             <ul className="flex  md:flex-row flex-col md:items-center md:gap-5 gap-3">
                 {categories.map(category => (
                     
-                    <li  key={category.id}><Link to={category.name} className="hover:text-purple-500" href="/sports" >{category.name}</Link></li>
+                    <li  key={category.id}><Link to={`/${category?.id}`} className="hover:text-purple-500"  >{category.name}</Link></li>
                 ))}
             </ul>
               

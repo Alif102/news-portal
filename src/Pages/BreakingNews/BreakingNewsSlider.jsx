@@ -13,7 +13,7 @@ const BreakingNewsSlider = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        console.log('Response data:', response.data.data);
+        // console.log('Response data:', response.data.data);
 
         const filteredPosts = response.data.data.filter(post => post.category_name === "ব্রেকিং নিউজ");
         setPosts(filteredPosts);
@@ -26,7 +26,7 @@ const BreakingNewsSlider = () => {
     fetchData();
   }, []);
 
-  console.log(posts)
+  // console.log(posts)
   return (
     <div>
           <Carousel transition={{ duration: 1 }} className="rounded-xl">
