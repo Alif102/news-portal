@@ -44,6 +44,7 @@ const DetailPage = () => {
           
           
           setPostData(response.data.data);
+          updateOGTags(response.data.data);
          
           setLoading(false);
         } catch (error) {
@@ -74,6 +75,28 @@ const DetailPage = () => {
   
       fetchData();
     }, [id]);
+
+    const updateOGTags = (data) => {
+      if (data) {
+        // Update OG image dynamically
+        const ogImageTag = document.querySelector('meta[property="og:image"]');
+        if (ogImageTag) {
+          ogImageTag.setAttribute('content', data.imageUrl);
+        }
+  
+        // Update OG title dynamically
+        const ogTitleTag = document.querySelector('meta[property="og:title"]');
+        if (ogTitleTag) {
+          ogTitleTag.setAttribute('content', data.title);
+        }
+  
+        // Update OG description dynamically
+        const ogDescriptionTag = document.querySelector('meta[property="og:description"]');
+        if (ogDescriptionTag) {
+          ogDescriptionTag.setAttribute('content', data.description);
+        }
+      }
+    };
 
 
     console.log(postData);
