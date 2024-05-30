@@ -24,7 +24,7 @@ const SecondHomePage = ({ related, postData }) => {
 
 
 
-  
+  const currentUrl = window.location.href;
 
   const url = `https://desh365.top/details/${postData.id}`;
   const logoFillColor = "white";
@@ -65,6 +65,15 @@ const shareOnFacebook = () => {
               <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
             Share on Facebook
         </a>
+
+        <a
+    href={`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    
+  >
+    <h1>shareee</h1>
+  </a>
 
 
               <div className='flex gap-5'>
