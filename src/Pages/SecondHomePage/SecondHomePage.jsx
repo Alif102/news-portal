@@ -36,12 +36,13 @@ const SecondHomePage = ({ related, postData }) => {
   // const shareOnFacebook = () => {
   //   window.open(`https://www.facebook.com/sharer/sharer.php?u=https://news-portal-gray.vercel.app/details/${postData.id}`, '_blank');
   // };
+  const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
 
   const shareOnFacebook = () => {
     // Use Facebook SDK to trigger Share Dialog
     window.FB.ui({
       method: 'share',
-      href: 'https://news-portal-gray.vercel.app',
+      href: cururl,
     }, function(response){});
   };
   

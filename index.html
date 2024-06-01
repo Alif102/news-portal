@@ -9,19 +9,24 @@
     <script src="https://jsc.mgid.com/site/556728.js" async></script>
     <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=YOUR_APP_ID&autoLogAppEvents=1" nonce="YOUR_NONCE"></script> -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=972318721003725&autoLogAppEvents=1"></script>
+    <script>
+      // Replace this with the code that fetches the dynamic image URL
+      const dynamicImageUrl = "https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp";
 
-    <!-- <meta property="og:image" content="https://braincraftapps.com/images/blog/blog_post_61decdeb27550.jpeg" /> -->
-    <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0&appId=your-app-id&autoLogAppEvents=1" nonce="exampleNonce"></script> -->
-  </head>
+      // Create og:image meta tag
+      const ogImageTag = document.createElement('meta');
+      ogImageTag.setAttribute('property', 'og:image');
+      ogImageTag.setAttribute('content', dynamicImageUrl);
+
+      // Append og:image meta tag to head
+      document.head.appendChild(ogImageTag);
+    </script>
+    </head>
   <body>
     
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <!-- <div data-type="_mgwidget" data-widget-id="1624970">
-    </div>
-   
-    <script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");
-    </script> -->
+    
    
   </body>
 </html>
