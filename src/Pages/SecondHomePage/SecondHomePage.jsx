@@ -36,7 +36,7 @@ const SecondHomePage = ({ related, postData }) => {
       method: 'share',
       href: cururl,
       quote: 'Your custom quote here', // Add your custom title here
-      picture: 'https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp', // Add the URL of the image you want to share here
+      picture: 'https://admin.desh365.top/public/storage/post-image/4619_1716795170.webp', // Add the URL of the image you want to share here
     }, function(response) {
       // Optional callback function
     });
