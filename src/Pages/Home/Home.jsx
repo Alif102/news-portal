@@ -37,7 +37,7 @@ const Home = () => {
      fetchPosts();
    }, []);
  
-  console.log('tamim')
+
 
 
 
@@ -109,7 +109,7 @@ const Home = () => {
 
 
       </div>
-{/* <CommonPage/> */}
+
     </div>
   )
 }

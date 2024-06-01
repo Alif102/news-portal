@@ -1,30 +1,9 @@
-import React, { useEffect, useState } from 'react'
 import Jatiyo from '../../../Component/Jatiyo/Jatiyo'
 const National = () => {
 
 
-  const [posts, setPosts] = useState([]);
 
 
-
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const response = await axios.get('https://admin.desh365.top/api/all-post');
-            console.log('Response data:', response.data.data); 
-           
-            const filteredPosts = response.data.data.filter(post => post.category_name === "জাতীয়");
-            setPosts(filteredPosts);
-            // setPosts(response.data.data);
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-console.log(posts)
-    console.log(posts[0])
 
 
 

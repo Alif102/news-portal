@@ -15,7 +15,6 @@ const Jatiyo = () => {
         const fetchData = async () => {
           try {
             const response = await axios.get('https://admin.desh365.top/api/all-post');
-            console.log('Response data:', response.data.data); 
            
             const filteredPosts = response.data.data.filter(post => post.category_name === "জাতীয়");
             setPosts(filteredPosts);
@@ -27,8 +26,7 @@ const Jatiyo = () => {
     
         fetchData();
       }, []);
-console.log(posts)
-    console.log(posts[0])
+
     //  const slicedPostBody = posts[0].post_body.slice(0, 50);
    
     return (
@@ -41,7 +39,7 @@ console.log(posts)
                 <div className=''>
                     {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
                     {posts.length > 0 && (
-            <div className='space-y-4'>
+            <div key={posts[0].id} className='space-y-4'>
               <img className='w-[95%] h-full mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
               <h1 className='text-xl font-bold'>
                 {posts[0].title}
@@ -66,7 +64,7 @@ console.log(posts)
         const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
         
         return (
-         <Link to={`/details/${post?.id}`}>
+         <Link to={`/details/${post?.id}`} key={post.id}>
           <div className='flex  gap-2' key={post?.id}>
                         <img className='w-24 h-24' src={imageUrl} alt={post.title} />
 

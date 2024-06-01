@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import NewsDiv2 from '../../Pages/Home/RightSide/NewsDiv2'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import PostBody from '../../Component/PostBody';
 
 const Sport = () => {
 
@@ -14,11 +12,11 @@ const Sport = () => {
         const fetchData = async () => {
           try {
             const response = await axios.get('https://admin.desh365.top/api/all-post');
-            console.log('Response data:', response.data.data); 
+            // console.log('Response data:', response.data.data); 
            
             const filteredPosts = response.data.data.filter(post => post.category_name === "স্পোর্টস");
             setPosts(filteredPosts);
-            // setPosts(response.data.data);
+          
           } catch (error) {
             console.error('Error fetching data:', error);
           }
@@ -27,8 +25,7 @@ const Sport = () => {
         fetchData();
       }, []);
 
-    console.log(posts[0])
-    //  const slicedPostBody = posts[0].post_body.slice(0, 50);
+   
    
     return (
         <div>
@@ -38,9 +35,8 @@ const Sport = () => {
 
 
                 <div className='col-span-4'>
-                    {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
                     {posts.length > 0 && (
-            <div className='space-y-4'>
+            <div key={posts[0].id} className='space-y-4'>
               <img className='w-[100%] h-full mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
               <h1 className='text-xl font-bold'>
                 {posts[0].title}
@@ -60,7 +56,7 @@ const Sport = () => {
         const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
         
         return (
-         <Link to={`/details/${post?.id}`}>
+         <Link to={`/details/${post?.id}`}  key={post?.id}>
           <div className='flex gap-2' key={post?.id}>
                         <img className='w-24 h-24' src={imageUrl} alt={post.title} />
 

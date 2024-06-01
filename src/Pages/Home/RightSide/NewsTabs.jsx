@@ -58,7 +58,7 @@ const NewsTabs = () => {
         const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
         
         return (
-         <Link to={`/details/${post?.id}`}>
+         <Link to={`/details/${post?.id}`} key={post?.id}>
           <div className='flex gap-2' key={post?.id}>
                         <img className='w-24 h-24' src={imageUrl} alt={post.title} />
 

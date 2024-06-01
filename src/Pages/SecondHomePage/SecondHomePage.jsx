@@ -5,11 +5,11 @@ import NewsTabs from '../Home/RightSide/NewsTabs';
 import NewsCard from '../../Component/NewsCard';
 import PostBody from '../../Component/PostBody';
 import Loader from '../../Component/Loader/Loader';
-import { FacebookShareButton, FacebookIcon } from "react-share"
+// import { FacebookShareButton, FacebookIcon } from "react-share"
 import { Helmet } from 'react-helmet-async';
 import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageChange';
-import AddComponent from '../../Component/AddComponent/AddComponent';
-import { Link } from 'react-router-dom';
+// import AddComponent from '../../Component/AddComponent/AddComponent';
+// import { Link } from 'react-router-dom';
 const SecondHomePage = ({ related, postData }) => {
 
   if (!postData) {
@@ -23,31 +23,30 @@ const SecondHomePage = ({ related, postData }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
 
 
-  console.log(postData)
   const currentUrl = window.location.href;
 
-  const url = `https://desh365.top/details/${postData.id}`;
-  const logoFillColor = "white";
+  // const url = `https://desh365.top/details/${postData.id}`;
+  // const logoFillColor = "white";
 
-  const handleShareButtonClick = () => {
-    // Open Facebook share dialog
-    window.FB.ui({
-      method: 'share',
-      href: currentUrl
-    }, function (response) { });
-  }
-  console.log("URL:", url);
-  console.log("logoFillColor:", logoFillColor);
-  const shareOnFacebook = () => {
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=https://news-portal-gray.vercel.app/details/${postData.id}`, '_blank');
-  };
+  // const handleShareButtonClick = () => {
+   
+  //   window.FB.ui({
+  //     method: 'share',
+  //     href: currentUrl
+  //   }, function (response) { });
+  // }
+  // console.log("URL:", url);
+  // console.log("logoFillColor:", logoFillColor);
+  // const shareOnFacebook = () => {
+  //   window.open(`https://www.facebook.com/sharer/sharer.php?u=https://news-portal-gray.vercel.app/details/${postData.id}`, '_blank');
+  // };
   return (
 
     <div>
       <Helmet>
-        {/* <title>News Portal Details Page</title> */}
+        {/* <title>News Portal Details Page</title>  */}
         <meta property="og:title" content={postData.title} />
-      </Helmet>
+      // </Helmet>
       <ScrollToTopOnPageChange />
 
       <div className="container mx-auto">
@@ -71,12 +70,12 @@ const SecondHomePage = ({ related, postData }) => {
 
             <div className="grid md:grid-cols-8 grid-cols-1 gap-6">
               <div className="md:col-span-5 col-span-1">
-                <a href={shareOnFacebook} target="_blank" rel="noopener noreferrer">
+                {/* <Link to={shareOnFacebook} target="_blank" rel="noopener noreferrer">
                   Share on Facebook
-                </a>
+                </Link>
 
-                <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`}
+                <Link
+                  to={`https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`}
                   target="_blank"
                   rel="noopener noreferrer"
 
@@ -85,7 +84,7 @@ const SecondHomePage = ({ related, postData }) => {
 
 
 
-                </a>
+                </Link> */}
 
 
 
@@ -94,9 +93,9 @@ const SecondHomePage = ({ related, postData }) => {
 
 
 
-
-                <div className='flex gap-5'>
-                  <button onClick={handleShareButtonClick}>Share on Facebook</button>
+ {/* <button onClick={handleShareButtonClick}>Share on Facebook</button> */}
+             {/* <div className='flex gap-5'>
+                 
                   <Link onClick={shareOnFacebook}>
                     <FacebookShareButton  >
                       <FacebookIcon logoFillColor={logoFillColor} />
@@ -105,7 +104,7 @@ const SecondHomePage = ({ related, postData }) => {
                   <FacebookShareButton url={window.location.href} >
                     <h1>share</h1>
                   </FacebookShareButton>
-                </div>
+                </div>  */}
 
 
 

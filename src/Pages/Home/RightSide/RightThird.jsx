@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-// import car2 from '../../../assets/Images/car2.jpg'
-// import car3 from '../../../assets/Images/car3.jpg'
-// import car4 from '../../../assets/Images/car4.jpg'
-// import car5 from '../../../assets/Images/car6.jpg'
-// import { Link } from 'react-router-dom'
+
 const RightThird = ({allposts}) => {
-  console.log(allposts.id)
+ 
 
 
   // Fetch Data
@@ -42,7 +38,7 @@ const RightThird = ({allposts}) => {
         const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
         
         return (
-         <Link to={`/details/${post?.id}`}>
+         <Link to={`/details/${post?.id}`} key={post?.id}>
           <div className='flex gap-2 justify-center items-center hover:underline' key={post?.id}>
                         <img className='w-24 h-24' src={imageUrl} alt={post.title} />
 

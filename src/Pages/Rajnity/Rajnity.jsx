@@ -43,7 +43,7 @@ const Rajnity = () => {
        <article className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 w-full h-full pt-40 mx-auto">
        <img src={`https://admin.desh365.top/public/storage/post-image/${rajnity[0].image}`} alt="University of Southern California" className="absolute inset-0 h-full w-full object-cover"/>
        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-       <h3 class="z-10 mt-3 text-xl font-bold text-white"> {rajnity[0].title}</h3>
+       <h3 className="z-10 mt-3 text-xl font-bold text-white"> {rajnity[0].title}</h3>
        {/* <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div> */}
    </article>
      )}

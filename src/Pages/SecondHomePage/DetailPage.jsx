@@ -33,7 +33,6 @@ const DetailPage = () => {
       fetchData();
     }, [id]);
 
-console.log(postData)
 
     useEffect(() => {
       const fetchData = async () => {
@@ -56,9 +55,6 @@ console.log(postData)
   
 
 
-    console.log(postData);
-    console.log(related);
-    
     
 
     
