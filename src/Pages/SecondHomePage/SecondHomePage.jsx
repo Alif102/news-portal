@@ -12,11 +12,7 @@ import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageCha
 // import { Link } from 'react-router-dom';
 const SecondHomePage = ({ related, postData }) => {
 
-  // if (!postData) {
-  //   return <div className='text-center'>
-  //     <Loader />
-  //   </div> 
-  // }
+
 
 
 
@@ -40,6 +36,15 @@ const SecondHomePage = ({ related, postData }) => {
   // const shareOnFacebook = () => {
   //   window.open(`https://www.facebook.com/sharer/sharer.php?u=https://news-portal-gray.vercel.app/details/${postData.id}`, '_blank');
   // };
+
+  const shareOnFacebook = () => {
+    // Use Facebook SDK to trigger Share Dialog
+    window.FB.ui({
+      method: 'share',
+      href: 'https://news-portal-gray.vercel.app',
+    }, function(response){});
+  };
+  
   return (
 
     <div>
@@ -108,6 +113,7 @@ const SecondHomePage = ({ related, postData }) => {
                   </FacebookShareButton>
                 </div>  */}
 
+<button onClick={shareOnFacebook}>Share on Faaaacebook</button>
 
 
                 <div className="py-5">
