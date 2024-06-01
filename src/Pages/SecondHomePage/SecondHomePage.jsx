@@ -23,7 +23,7 @@ const SecondHomePage = ({ related, postData }) => {
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
 
 
-  const currentUrl = window.location.href;
+  // const currentUrl = window.location.href;
 
   // const url = `https://desh365.top/details/${postData.id}`;
   // const logoFillColor = "white";
@@ -69,7 +69,7 @@ const SecondHomePage = ({ related, postData }) => {
 
 
             <div className="grid md:grid-cols-8 grid-cols-1 gap-6">
-              <div className="md:col-span-5 col-span-1">
+              <div className="md:col-span-5 space-y-3 col-span-1">
                 {/* <Link to={shareOnFacebook} target="_blank" rel="noopener noreferrer">
                   Share on Facebook
                 </Link>
@@ -121,7 +121,7 @@ const SecondHomePage = ({ related, postData }) => {
                 <h1 className="box-text1 md:block sm:text-center md:text-start my-2 text-sm md:text-xl lg:text-2xl mt-3">
                   {postData.title}
                 </h1>
-                <img className="w-[400px] h-[350px]" src={imageUrl} alt={postData.title} />
+                <img className="w-[100%]   h-[350px]" src={imageUrl} alt={postData.title} />
 
                 <div className="flex items-center justify-center my-3 w-auto h-auto font-bold bg-[#D9D9D9]">ADD</div>
                 {/* <div data-type="_mgwidget" data-widget-id="1624970">
@@ -149,7 +149,7 @@ const SecondHomePage = ({ related, postData }) => {
               </div>
               <div className="md:col-span-3 col-span-1">
                 <Add />
-                <div className="w-[100%] ml-1">
+                <div className="w-[100%] mt-6 border border-gray ml-1">
                   <NewsTabs />
                 </div>
               </div>

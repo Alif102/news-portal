@@ -36,7 +36,7 @@ const NewsCard = ({ related }) => {
                 <div className='flex gap-2 flex-col my-3' key={post?.id}>
                     <div className=''>
 
-                      <img className='transition duration-300 ease-in-out hover:scale-90 w-[250px] ' src={imageUrl} alt={post.title} />
+                      <img className='transition duration-300 ease-in-out hover:scale-90 w-[100%] h-[200px] rounded-md' src={imageUrl} alt={post.title} />
                     </div>
                     <h2 className='text-[16px] font-bold justify-center items-center'>{post.title}</h2>
 

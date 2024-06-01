@@ -29,10 +29,10 @@ const NewsTabs = () => {
 
   return (
     <div className="shadow-xl w-[100%] mt-4 h-[490px]">
-      <div className="flex ">
+      <div className="flex justify-evenly">
         <button
           className={`px-3 py-2 ${
-            activeTab === 1 ? 'shadow-lg text-black' : 'shadow-xl'
+            activeTab === 1 ? 'shadow-lg  border border-black  bg-gray-200   text-black' : 'shadow-xl bg-gray-200 '
           }`}
           onClick={() => setActiveTab(1)}
         >
@@ -40,7 +40,7 @@ const NewsTabs = () => {
         </button>
         <button
           className={`px-3 py-2 ${
-            activeTab === 2 ? 'shadow-lg text-black' : 'shadow-xl'
+            activeTab === 2 ? 'shadow-lg border border-black bg-gray-200   text-black' : 'shadow-xl bg-gray-200'
           }`}
           onClick={() => setActiveTab(2)}
         >
@@ -59,11 +59,14 @@ const NewsTabs = () => {
         
         return (
          <Link to={`/details/${post?.id}`} key={post?.id}>
-          <div className='flex gap-2' key={post?.id}>
-                        <img className='w-24 h-24' src={imageUrl} alt={post.title} />
+          <div className='flex justify-center items-center gap-2' key={post?.id}>
+                        <img className='w-24 rounded-md h-24' src={imageUrl} alt={post.title} />
 
             <h2>{post.title}</h2>
+          
+           
           </div>
+          <div className='border borber-b my-1'></div>
           </Link>
         );
       })}

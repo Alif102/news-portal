@@ -1,18 +1,15 @@
 
 import LeftSide from './LeftSide'
 import Add from './RightSide/Add'
-
-import NewsDiv2 from './RightSide/NewsDiv2'
 import RightThird from './RightSide/RightThird'
-
 import NewsTabs from './RightSide/NewsTabs'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import Jatiyo from './RightSide/Jatiyo'
 import National from './RightSide/National'
 import BreakingNewsSlider from '../BreakingNews/BreakingNewsSlider'
 import { Helmet } from 'react-helmet-async'
-import CommonPage from '../../Component/CommonPage/CommonPage'
+import Loader from '../../Component/Loader/Loader'
+import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageChange'
 
 const Home = () => {
 
@@ -40,7 +37,11 @@ const Home = () => {
 
 
 
-
+   if (!allposts) {
+    return <div className='text-center'>
+      <Loader />
+    </div> // Or any fallback content
+  }
 
 
 
@@ -50,6 +51,7 @@ const Home = () => {
       <Helmet>
         <title>News Portal Home Page</title>
       </Helmet>
+      <ScrollToTopOnPageChange/>
       <div className='grid md:grid-cols-12 md:mx-10 ml-4 gap-6 lg:grid-cols-12 grid-cols-1'>
 
 
