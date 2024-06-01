@@ -1,32 +1,18 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>News Blog</title>
-  
-    <script src="https://jsc.mgid.com/site/556728.js" async></script>
-    <!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=YOUR_APP_ID&autoLogAppEvents=1" nonce="YOUR_NONCE"></script> -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=972318721003725&autoLogAppEvents=1"></script>
-    <script>
-      // Replace this with the code that fetches the dynamic image URL
-      const dynamicImageUrl = "https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp";
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News Blog</title>
 
-      // Create og:image meta tag
-      const ogImageTag = document.createElement('meta');
-      ogImageTag.setAttribute('property', 'og:image');
-      ogImageTag.setAttribute('content', dynamicImageUrl);
-
-      // Append og:image meta tag to head
-      document.head.appendChild(ogImageTag);
-    </script>
-    </head>
-  <body>
-    
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    
-   
-  </body>
+  <script src="https://jsc.mgid.com/site/556728.js" async></script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0&appId=972318721003725&autoLogAppEvents=1"></script>
+  <!-- Add the og:image meta tag directly in the HTML -->
+  <meta property="og:image" content="https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp">
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
