@@ -9,7 +9,6 @@ import National from './RightSide/National'
 import BreakingNewsSlider from '../BreakingNews/BreakingNewsSlider'
 import { Helmet } from 'react-helmet-async'
 import Loader from '../../Component/Loader/Loader'
-import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageChange'
 
 const Home = () => {
 
@@ -37,11 +36,6 @@ const Home = () => {
 
 
 
-   if (!allposts) {
-    return <div className='text-center'>
-      <Loader />
-    </div> // Or any fallback content
-  }
 
 
 
@@ -51,7 +45,6 @@ const Home = () => {
       <Helmet>
         <title>News Portal Home Page</title>
       </Helmet>
-      <ScrollToTopOnPageChange/>
       <div className='grid md:grid-cols-12 md:mx-10 ml-4 gap-6 lg:grid-cols-12 grid-cols-1'>
 
 

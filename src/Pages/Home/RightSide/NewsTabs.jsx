@@ -1,34 +1,41 @@
-import { useEffect, useState } from 'react';
-import NewsTabScroll from './NewsTabScroll';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const NewsTabs = () => {
-
-   // Fetch Data
-   const [posts, setPosts] = useState([]);
- 
-   useEffect(() => {
-     const fetchPosts = async () => {
-       try {
-         const response = await axios.get('https://admin.desh365.top/api/all-post');
-         setPosts(response.data.data);
-       } catch (error) {
-         console.error('Error fetching the posts:', error);
-       }
-     };
- 
-     fetchPosts();
-   }, []);
-
-
-
-
+  const [posts, setPosts] = useState([]);
   const [activeTab, setActiveTab] = useState(1);
- 
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get('https://admin.desh365.top/api/all-post');
+        setPosts(response.data.data);
+      } catch (error) {
+        console.error('Error fetching the posts:', error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
+
+  const renderPosts = (postList) => {
+    return (
+      <div className='flex flex-col space-y-4 gap-3 py-4'>
+        {postList.map((post) => (
+          <Link to={`/details/${post?.id}`} key={post?.id}>
+            <div className='flex gap-2'>
+              <img className='w-24 h-24' src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title} />
+              <h2>{post.title}</h2>
+            </div>
+          </Link>
+        ))}
+      </div>
+    );
+  };
 
   return (
-    <div className="shadow-xl w-[100%] mt-4 h-[490px]">
+    <div className="shadow-xl w-full mt-4 h-[490px]">
       <div className="flex justify-evenly">
         <button
           className={`px-3 py-2 ${
@@ -47,60 +54,15 @@ const NewsTabs = () => {
           সর্বোচ্চ পঠিত
         </button>
       </div>
-      <div
-        className="mt-4 h-96 overflow-y-scroll"
-        // style={{ background: activeTab === 1 ? '#BDBDBD' : '#D9D9D9' }}
-      >
-        {activeTab === 1 && (
-          <div className="p-4">
-           <div className=' flex flex-col space-y-4 gap-3 py-4'>
-{posts.map(post => {
-        const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
-        
-        return (
-         <Link to={`/details/${post?.id}`} key={post?.id}>
-          <div className='flex justify-center items-center gap-2' key={post?.id}>
-                        <img className='w-24 rounded-md h-24' src={imageUrl} alt={post.title} />
-
-            <h2>{post.title}</h2>
-          
-           
-          </div>
-          <div className='border borber-b my-1'></div>
-          </Link>
-        );
-      })}
-    </div>
-          </div>
-        )}
+      <div className="mt-4 h-96 overflow-y-scroll">
+        {activeTab === 1 && <div className="p-4">{renderPosts(posts)}</div>}
         {activeTab === 2 && (
-          <div className="p-4">
-            <div className=' flex flex-col space-y-4 gap-3 py-4'>
-{posts.slice().reverse().map(post => {
-        const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
-        
-        return (
-         <Link to={`/details/${post?.id}`}>
-          <div className='flex gap-2' key={post?.id}>
-                        <img className='w-24 h-24' src={imageUrl} alt={post.title} />
-
-            <h2>{post.title}</h2>
-          </div>
-          </Link>
-        );
-      })}
-    </div>
-          </div>
+          <div className="p-4">{renderPosts(posts.slice().reverse())}</div>
         )}
       </div>
       <div className='shadow-lg w-full mt-4 h-8'>
-<h1 className=' text-center p-1 font-bold'>আজকের সব খবর</h1>
+        <h1 className='text-center p-1 font-bold'>আজকের সব খবর</h1>
       </div>
-  
-      
-
-
-      
     </div>
   );
 };

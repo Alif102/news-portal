@@ -12,11 +12,11 @@ import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageCha
 // import { Link } from 'react-router-dom';
 const SecondHomePage = ({ related, postData }) => {
 
-  if (!postData) {
-    return <div className='text-center'>
-      <Loader />
-    </div> // Or any fallback content
-  }
+  // if (!postData) {
+  //   return <div className='text-center'>
+  //     <Loader />
+  //   </div> 
+  // }
 
 
 
