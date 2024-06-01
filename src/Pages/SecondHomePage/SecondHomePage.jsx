@@ -30,11 +30,18 @@ const SecondHomePage = ({ related, postData }) => {
   const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
 
   const shareOnFacebook = () => {
+   // Assuming cururl is defined elsewhere
+  
     window.FB.ui({
       method: 'share',
       href: cururl,
-    }, function(response){});
+      quote: 'Your custom quote here', // Add your custom title here
+      picture: 'https://admin.desh365.top/public/storage/post-image/4598_1716725277.webp', // Add the URL of the image you want to share here
+    }, function(response) {
+      // Optional callback function
+    });
   };
+  
   
   return (
     <div>
