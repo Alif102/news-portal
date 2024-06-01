@@ -9,7 +9,9 @@ import { Helmet } from 'react-helmet-async';
 import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageChange';
 
 const SecondHomePage = ({ related, postData }) => {
+  
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
+ 
   useEffect(() => {
     // Dynamically set og:title and og:image meta tags
     const setOgMetaTags = () => {
@@ -20,14 +22,13 @@ const SecondHomePage = ({ related, postData }) => {
 
       const ogImageTag = document.createElement('meta');
       ogImageTag.setAttribute('property', 'og:image');
-      ogImageTag.setAttribute('content', `https://news-portal-gray.vercel.app/public/storage/post-image/${postData.image}`);
+      ogImageTag.setAttribute('content', imageUrl); // Set imageUrl dynamically
       document.head.appendChild(ogImageTag);
     };
 
     setOgMetaTags();
   }, [postData]);
-
-  const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
+  // const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
 
   const shareOnFacebook = () => {
     // Assuming cururl is defined elsewhere
