@@ -28,11 +28,9 @@ const SecondHomePage = ({ related, postData }) => {
 
     setOgMetaTags();
   }, [postData]);
-  // const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
 
   const shareOnFacebook = () => {
-    // Assuming cururl is defined elsewhere
-    const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
+    const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
   
     window.FB.ui({
       method: 'share',
@@ -66,7 +64,7 @@ const SecondHomePage = ({ related, postData }) => {
 
             <div className="grid md:grid-cols-8 grid-cols-1 gap-6">
               <div className="md:col-span-5  col-span-1">
-                <button onClick={shareOnFacebook}>Share on Facebook</button>
+                <button className='bg-gray-200 my-4 p-4' onClick={shareOnFacebook}>Share on Facebook</button>
                 <div className="py-5">
                   <br />
                   <hr />

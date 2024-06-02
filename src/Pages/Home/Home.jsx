@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
-import Loader from '../../Component/Loader/Loader';
 import LeftSide from './LeftSide';
 import Add from './RightSide/Add';
 import RightThird from './RightSide/RightThird';
@@ -34,9 +33,7 @@ const Home = () => {
         <title>News Portal Home Page</title>
       </Helmet>
 
-      {isLoading ? (
-        <Loader />
-      ) : (
+     
         <div className='grid md:grid-cols-12 md:mx-10 ml-4 gap-6 lg:grid-cols-12 grid-cols-1'>
           <div className='col-span-2 order-last md:order-first lg:block lg:order-first gap-3 '>
             <LeftSide />
@@ -61,7 +58,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      )}
+    
     </div>
   );
 };
