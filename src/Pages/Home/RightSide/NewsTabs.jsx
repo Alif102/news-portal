@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const NewsTabs = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true); // State to track loading status
   const [activeTab, setActiveTab] = useState(1);
 
   useEffect(() => {
@@ -11,8 +12,10 @@ const NewsTabs = () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
         setPosts(response.data.data);
+        setLoading(false); // Data fetched, set loading to false
       } catch (error) {
         console.error('Error fetching the posts:', error);
+        setLoading(false); // Even if error occurs, set loading to false
       }
     };
 
@@ -22,7 +25,7 @@ const NewsTabs = () => {
   const renderPosts = (postList) => (
     <div className='flex flex-col space-y-4 gap-3 py-4'>
       {postList.map((post) => (
-        <Link to={`/details/${post?.id}`} key={post?.id} className='flex items-center gap-2'>
+        <Link to={`/details/${post?.id}`} key={post?.id} className='flex items-center gap-2 hover:underline'>
           <img className='w-20 rounded-md ' src={`https://admin.desh365.top/public/storage/post-image/${post?.image}`} alt={post?.title} />
           <h2 className='text-[14px]'>{post?.title}</h2>
         </Link>
@@ -47,7 +50,15 @@ const NewsTabs = () => {
         </button>
       </div>
       <div className="mt-4 h-96 overflow-y-scroll">
-        <div className="p-4">{activeTab === 1 ? renderPosts(posts) : renderPosts(posts.slice().reverse())}</div>
+        {loading ? (
+        
+          <div className="flex justify-center items-center h-full">
+            <div className="loader">Loading......</div> {/* You can replace this with your loader component */}
+          </div>
+        ) : (
+          // Render posts when data is fetched
+          <div className="p-4">{activeTab === 1 ? renderPosts(posts) : renderPosts(posts.slice().reverse())}</div>
+        )}
       </div>
       <div className='shadow-lg w-full mt-4 h-8'>
         <h1 className='text-center p-1 font-bold'>আজকের সব খবর</h1>
