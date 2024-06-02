@@ -14,7 +14,7 @@ function ScrollToTopOnPageChange() {
     // Simulate loading time (remove this setTimeout in production)
     const timeoutId = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Adjust the delay as needed
+    }, 100); // Adjust the delay as needed
 
     return () => clearTimeout(timeoutId);
   }, [pathname]);

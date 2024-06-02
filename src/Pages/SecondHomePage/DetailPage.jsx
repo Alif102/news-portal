@@ -1,9 +1,8 @@
 import axios from 'axios';
-import { useEffect, useMemo, useState, Suspense, lazy } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import Loader from '../../Component/Loader/Loader';
-
-const SecondHomePage = lazy(() => import('../SecondHomePage/SecondHomePage'));
+import SecondHomePage from '../SecondHomePage/SecondHomePage'; // Importing directly as lazy loading might add unnecessary overhead
 
 const DetailPage = () => {
   const { id } = useParams();
@@ -14,10 +13,19 @@ const DetailPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://admin.desh365.top/api/post/${id}`);
-        setPostData(response.data.data);
-        setRelated(response.data.related_post);
-        setLoading(false);
+        const cachedData = sessionStorage.getItem(`post_${id}`);
+        if (cachedData) {
+          const parsedData = JSON.parse(cachedData);
+          setPostData(parsedData.postData);
+          setRelated(parsedData.related);
+          setLoading(false);
+        } else {
+          const response = await axios.get(`https://admin.desh365.top/api/post/${id}`);
+          setPostData(response.data.data);
+          setRelated(response.data.related_post);
+          setLoading(false);
+          sessionStorage.setItem(`post_${id}`, JSON.stringify({ postData: response.data.data, related: response.data.related_post }));
+        }
       } catch (error) {
         console.error('Error fetching data:', error);
         setLoading(false);
@@ -27,25 +35,19 @@ const DetailPage = () => {
     fetchData();
   }, [id]);
 
-  const transformedPostData = useMemo(() => {
-    return { postData, related };
-  }, [postData, related]);
+  const transformedPostData = useMemo(() => ({ postData, related }), [postData, related]);
 
   return (
     <div>
-      <div>
-        {loading ? (
-          <Loader />
-        ) : (
-          <div>
-            {transformedPostData && (
-              <Suspense fallback={<Loader />}>
-                <SecondHomePage related={related} postData={postData} />
-              </Suspense>
-            )}
-          </div>
-        )}
-      </div>
+      {loading ? (
+        <Loader />
+      ) : (
+        <div>
+          {transformedPostData && (
+            <SecondHomePage related={related} postData={postData} />
+          )}
+        </div>
+      )}
     </div>
   );
 };

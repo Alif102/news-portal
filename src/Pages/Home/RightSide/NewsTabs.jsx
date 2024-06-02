@@ -22,9 +22,9 @@ const NewsTabs = () => {
   const renderPosts = (postList) => (
     <div className='flex flex-col space-y-4 gap-3 py-4'>
       {postList.map((post) => (
-        <Link to={`/details/${post?.id}`} key={post?.id} className='flex gap-2'>
-          <img className='w-24 h-24' src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title} />
-          <h2>{post.title}</h2>
+        <Link to={`/details/${post?.id}`} key={post?.id} className='flex items-center gap-2'>
+          <img className='w-20 rounded-md ' src={`https://admin.desh365.top/public/storage/post-image/${post?.image}`} alt={post?.title} />
+          <h2 className='text-[14px]'>{post?.title}</h2>
         </Link>
       ))}
     </div>
