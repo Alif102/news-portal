@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Loader from '../Loader/Loader';
+import { Link } from 'react-router-dom';
 
 const CategoryCard = ({ category, data }) => (
   <div className='col-span-4'>
@@ -9,9 +10,11 @@ const CategoryCard = ({ category, data }) => (
     <div className='space-y-3 text-[14px] px-2 my-4'>
       {data.length > 0 ? (
         <div className='space-y-4'>
-          <img className='w-[100%] h-[200px] mb-3' src={`https://admin.desh365.top/public/storage/post-image/${data[0].image}`} alt={data[0].title} />
-          <h1 className='text-xl font-bold'>{data[0].title}</h1>
-          <h1 className='text-sm'>{data[0].post_body}</h1>
+          <Link to={`/details/${data[0].id}`} className='block'>
+            <img className='w-[100%] h-[200px] mb-3' src={`https://admin.desh365.top/public/storage/post-image/${data[0].image}`} alt={data[0].title} />
+            <h1 className='text-xl font-bold'>{data[0].title}</h1>
+            <h1 className='text-sm'>{data[0].post_body}</h1>
+          </Link>
         </div>
       ) : (
         <p>Loading...</p>
