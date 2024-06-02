@@ -12,22 +12,7 @@ const SecondHomePage = ({ related, postData }) => {
   
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
  
-  useEffect(() => {
-    // Dynamically set og:title and og:image meta tags
-    const setOgMetaTags = () => {
-      const ogTitleTag = document.createElement('meta');
-      ogTitleTag.setAttribute('property', 'og:title');
-      ogTitleTag.setAttribute('content', postData.title);
-      document.head.appendChild(ogTitleTag);
-
-      const ogImageTag = document.createElement('meta');
-      ogImageTag.setAttribute('property', 'og:image');
-      ogImageTag.setAttribute('content', imageUrl); // Set imageUrl dynamically
-      document.head.appendChild(ogImageTag);
-    };
-
-    setOgMetaTags();
-  }, [postData]);
+  
 
   const shareOnFacebook = () => {
     const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
@@ -73,7 +58,11 @@ const SecondHomePage = ({ related, postData }) => {
                   {postData.title}
                 </h1>
                 <img className="banner-img" src={imageUrl} alt={postData.title} />
+              
+              {/* Add */}
                 <div className="flex items-center justify-center my-3 w-auto h-auto font-bold bg-[#D9D9D9]">ADD</div>
+                
+                
                 <PostBody postBody={postData.post_body} />
                 <div className="flex items-center justify-center my-3 mx-auto w-[50%] h-[250px] font-bold bg-[#D9D9D9]">ADD</div>
               </div>
