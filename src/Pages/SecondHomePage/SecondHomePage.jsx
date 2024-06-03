@@ -12,30 +12,55 @@ const SecondHomePage = ({ related, postData }) => {
   
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
  
-
-
- 
-
+  const curUrl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
   const shareOnFacebook = () => {
-    const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
-    console.log(cururl)
-    // const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
-   const encodedUrl = encodeURIComponent(cururl);
-  const encodedTitle = encodeURIComponent(postData.title);
-
-  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedTitle}`;
+   
+    const encodedUrl = encodeURIComponent(curUrl);
+    const encodedTitle = encodeURIComponent(postData.title);
+    
+    // Prepare image URL for Facebook sharing
+    const imageUrl = `https://admin.desh365.top/public/storage/post-image/${encodeURIComponent(postData.image)}`;
   
     window.FB.ui({
-      
       method: 'share',
-      href: shareUrl,
-      quote: 'Your custom quote here', // Add your custom title here
-      picture: imageUrl, // Use dynamic imageUrl here
+      href: encodedUrl,
+      quote: encodedTitle,
+      hashtag: '#YourHashtag', 
+      display: 'popup',
+      redirect_uri: curUrl,  
     }, function(response) {
-      // Optional callback function
-
+      if (response && !response.error_message) {
+        console.log('Content shared successfully');
+      } else {
+        console.log('Error while sharing content');
+      }
     });
   };
+ 
+
+  // const shareOnFacebook = () => {
+  //   const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
+  //   console.log(cururl)
+  //   // const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
+  //  const encodedUrl = encodeURIComponent(cururl);
+  // const encodedTitle = encodeURIComponent(postData.title);
+  // console.log("encodedurl", encodedUrl)
+  // console.log("encodedTitle" ,encodedTitle)
+  // console.log(postData.title)
+
+  // const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedTitle}`;
+  
+  //   window.FB.ui({
+      
+  //     method: 'share',
+  //     href: shareUrl,
+  //     quote: 'Your custom quote here', // Add your custom title here
+  //     picture: imageUrl, // Use dynamic imageUrl here
+  //   }, function(response) {
+     
+
+  //   });
+  // };
  console.log(postData)
 
 
@@ -50,7 +75,7 @@ const SecondHomePage = ({ related, postData }) => {
         <meta property="og:title" content={postData.title} />
         <meta property="og:description" content={postData.description} />
         <meta property="og:image" content={imageUrl} />
-        <meta property="og:url" content={`https://news-portal-gray.vercel.app/details/${postData.id}`} />
+        <meta property="og:url" content={curUrl} />
         <meta property="og:type" content="article" />
     
 
