@@ -17,17 +17,18 @@ const SecondHomePage = ({ related, postData }) => {
    
     const encodedUrl = encodeURIComponent(curUrl);
     const encodedTitle = encodeURIComponent(postData.title);
-    
+    console.log( encodedTitle)
     // Prepare image URL for Facebook sharing
-    const imageUrl = `https://admin.desh365.top/public/storage/post-image/${encodeURIComponent(postData.image)}`;
+    // const imageUrl = `https://admin.desh365.top/public/storage/post-image/${encodeURIComponent(postData.image)}`;
   
     window.FB.ui({
       method: 'share',
-      href: encodedUrl,
-      quote: encodedTitle,
+      href: `https://news-portal-gray.vercel.app/details/${postData.id}`,
+      quote: postData.title,
+      picture: imageUrl,
       hashtag: '#YourHashtag', 
       display: 'popup',
-      redirect_uri: curUrl,  
+      // redirect_uri: curUrl,  
     }, function(response) {
       if (response && !response.error_message) {
         console.log('Content shared successfully');
