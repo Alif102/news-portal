@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom';
 const CategoryCard = ({ category, data }) => (
   <div className='col-span-4'>
     <h1 className='font-bold text-xl'>{category}</h1>
-    <div className='border-black py-3 border-b-4'></div>
-    <div className='space-y-3 text-[14px] px-2 my-4'>
+    <div className='border-black my-3 border-b-4'></div>
+    <div className='my-5'>
       {data.length > 0 ? (
-        <div className='space-y-4'>
-          <Link to={`/details/${data[0].id}`} className='block'>
+        <div >
+          <Link to={`/details/${data[0].id}`} >
             <img className='w-[100%] h-[200px] mb-3' src={`https://admin.desh365.top/public/storage/post-image/${data[0].image}`} alt={data[0].title} />
-            <h1 className='text-xl font-bold'>{data[0].title}</h1>
+            <h1 className='text-xl font-bold my-2'>{data[0].title}</h1>
             <h1 className='text-sm'>{data[0].post_body}</h1>
           </Link>
         </div>
