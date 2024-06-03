@@ -34,7 +34,7 @@ const NewsTabs = () => {
   );
 
   return (
-    <div className="s shadow-inner w-full mt-4 py-6 h-[490px]">
+    <div className=" shadow-lg w-full mt-4 py-6 h-[490px]">
       <div className="flex justify-evenly">
         <button
           className={`px-3 py-2 ${activeTab === 1 ? 'shadow-lg border border-black bg-gray-200 text-black' : 'shadow-xl bg-gray-200'}`}

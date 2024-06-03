@@ -40,8 +40,8 @@ const Jatiyo = () => {
           {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
           {posts.length > 0 && (
             <Link to={`/details/${posts?.id}`} key={posts[0].id} className='space-y-4'>
-              <img className='w-[100%] h-[290px] mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
-              <h1 className='md:text-xl text-md font-bold'>
+              <img className='w-[100%]  mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
+              <h1 className=' text-md font-bold'>
                 {posts[0].title}
               </h1>
               {/*             
