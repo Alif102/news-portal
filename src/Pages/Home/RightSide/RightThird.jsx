@@ -29,7 +29,7 @@ const RightThird = ({allposts}) => {
         
         return (
          <Link to={`/details/${post?.id}`} key={post?.id}>
-          <div className='flex gap-2 justify-center items-center hover:underline' key={post?.id}>
+          <div className='flex gap-2  items-center hover:underline' key={post?.id}>
                         <img className='w-20' src={imageUrl} alt={post.title} />
 
             <h2 className='text-[14px]'>{post.title}</h2>

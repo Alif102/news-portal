@@ -12,8 +12,7 @@ const Binodon = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        // console.log('Response data:', response.data.data);
-
+       
         const filteredPosts = response.data.data.filter(post => post.category_name === "বাণিজ্য");
         setPosts(filteredPosts);
         // setPosts(response.data.data);
@@ -39,12 +38,13 @@ const Binodon = () => {
           {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
 
           {posts.length > 0 && (
-            <div key={posts[0].id} className='space-y-4'>
+            <Link  to={`/details/${posts[0].id}`}>
+            <div key={posts[0].id}  className='space-y-4'>
               <img className='w-[100%] h-full mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
               <h1 className='text-xl font-bold'>
                 {posts[0].title}
               </h1>
-            </div>
+            </div></Link>
           )}
 
 
@@ -56,14 +56,14 @@ const Binodon = () => {
         <div className='col-span-4'>
           <div>
 
-            <div className=' flex flex-col space-y-4 gap-3 py-4'>
+            <div className=' flex flex-col  gap-3 '>
               {posts.map(post => {
                 const imageUrl = `https://admin.desh365.top/public/storage/post-image/${post.image}`;
 
                 return (
                   <Link to={`/details/${post?.id}`}   key={post?.id}>
                     <div className='flex gap-2' key={post?.id}>
-                      <img className='w-24 h-24' src={imageUrl} alt={post.title} />
+                      <img className='w-24 ' src={imageUrl} alt={post.title} />
 
                       <h2>{post.title}</h2>
                     </div>
