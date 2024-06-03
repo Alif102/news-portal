@@ -21,10 +21,20 @@ const DetailPage = () => {
           setLoading(false);
         } else {
           const response = await axios.get(`https://admin.desh365.top/api/post/${id}`);
+
+          // document.querySelector('meta[property="og:title"]').setAttribute('content', data.data.title);
+          // document.querySelector('meta[property="og:description"]').setAttribute('content', data.data.description);
+          // document.querySelector('meta[property="og:image"]').setAttribute('content', data.image);
+          // document.querySelector('meta[property="og:url"]').setAttribute('content', data.url);
+
+
           setPostData(response.data.data);
+          
           setRelated(response.data.related_post);
           setLoading(false);
           sessionStorage.setItem(`post_${id}`, JSON.stringify({ postData: response.data.data, related: response.data.related_post }));
+          updateMetaTags(response.data.data);
+       
         }
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -36,6 +46,15 @@ const DetailPage = () => {
   }, [id]);
 
   const transformedPostData = useMemo(() => ({ postData, related }), [postData, related]);
+
+  // Function to update meta tags
+  const updateMetaTags = (data) => {
+    document.querySelector('meta[property="og:title"]').setAttribute('content', data.title);
+    document.querySelector('meta[property="og:description"]').setAttribute('content', data.description);
+    document.querySelector('meta[property="og:image"]').setAttribute('content', data.image);
+    document.querySelector('meta[property="og:url"]').setAttribute('content', window.location.href);
+  };
+
 
   return (
     <div>

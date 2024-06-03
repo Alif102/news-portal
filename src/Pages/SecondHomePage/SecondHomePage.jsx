@@ -30,10 +30,7 @@ const SecondHomePage = ({ related, postData }) => {
       display: 'popup',
     };
     
-    console.log("href:", shareParams.href);
-    console.log("quote:", shareParams.quote);
-    console.log("quote:", shareParams.picture);
-    console.log("quote:", shareParams.display);
+   
 
 
     window.FB.ui(
