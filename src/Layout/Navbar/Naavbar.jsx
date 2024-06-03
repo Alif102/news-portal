@@ -69,7 +69,7 @@ const Naavbar = () => {
             </button>
           </div>
           <div
-            className={`w-full lg:w-auto block lg:flex lg:items-center lg:inline-block ${
+            className={`w-full lg:w-auto block lg:flex lg:items-center ${
               isNavbarHidden ? 'hidden' : ''
             }`}
             id="navbar"
@@ -78,8 +78,12 @@ const Naavbar = () => {
             <ul className="flex  md:flex-row flex-col md:items-center md:gap-5 gap-3">
                 {categories.map(category => (
                     
-                    <li  key={category.id}><Link to={`/${category?.id}`} className="hover:text-purple-500"  >{category.name}</Link></li>
-                ))}
+                    <li  key={category.id}>
+                      
+                      <Link to={`/${category?.id}`} className="hover:text-purple-500"  >{category.name}</Link></li>
+                   
+             
+              ))}
             </ul>
               
              
