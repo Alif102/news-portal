@@ -26,6 +26,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import NewsDiv from '../NewsDiv';
 
 const National = () => {
 
@@ -57,7 +58,7 @@ const National = () => {
     <div>
       <p className='font-bold text-xl py-4 md:ml-10 ml-3'>জাতীয়</p>
 
-      <div className='grid md:grid-cols-12 md:mx-10 mx-2 gap-6 lg:grid-cols-12 grid-cols-1'>
+      <div className='grid md:grid-cols-12 md:mx-10 mx-2 mb-14 gap-4 lg:grid-cols-12 grid-cols-1'>
 
 
         <div className='col-span-4'>
@@ -71,10 +72,6 @@ const National = () => {
               </h1>
             </div>
           )}
-
-
-
-
         </div>
 
 
@@ -100,7 +97,9 @@ const National = () => {
         </div>
 
         <div className='col-span-4'>
-          <div className="flex items-center justify-center w-[100%] h-[350px]  font-bold bg-[#D9D9D9]">ADD</div>
+          {/* <div className="flex items-center justify-center w-[100%] h-[350px]  font-bold bg-[#D9D9D9]">ADD</div> */}
+       
+       <NewsDiv/>
         </div>
 
 
@@ -112,7 +111,7 @@ const National = () => {
 
 
       </div>
-      <div className=' border-black w-[94%] mx-auto my-6 border-b-2'></div>
+      {/* <div className=' border-black w-[94%] mx-auto my-6 border-b-2'></div> */}
 
     </div>
   )

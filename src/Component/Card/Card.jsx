@@ -49,7 +49,7 @@ const Card = () => {
 
   return (
     <div>
-      <div className='border-[#D8D8D8] w-[94%]  mx-auto my-6 border-b-4'></div>
+      {/* <div className='border-[#D8D8D8] w-[94%]  mx-auto my-6 border-b-4'></div> */}
       <div className='grid md:grid-cols-12 md:mx-10 mx-2 gap-6 lg:grid-cols-12 grid-cols-1'>
         {loading ? (
           <Loader/>

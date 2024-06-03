@@ -3,13 +3,11 @@ const NewsDiv = () => {
   return (
     <div>
         <div>
-              <div className='w-[100%] h-auto space-y-4  py-3 pt-7 pr-1 rounded-sm mt-6 flex flex-col shadow-lg p-2'>
-              
-
+              <div className='w-[100%] h-auto  rounded-sm flex flex-col shadow-lg '>
                 <h1 className="font-bold text-2xl mb-3 text-center">
                 আজকের মানি এক্সচেঞ্জ রেট
                 </h1>
-                <div className="flex cursor-pointer  flex-col space-y-4">
+                <div className="flex cursor-pointer  flex-col">
                   <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
