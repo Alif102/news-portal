@@ -28,10 +28,10 @@ const RightThird = ({allposts}) => {
 
 
   return (
-    <div>
+  
 
 
-<div className='shadow-xl w-[100%] mt-4 h-[390px] overflow-x-scroll '>
+<div className=' w-[100%] h-[410px] py-4 shadow-lg overflow-x-scroll '>
 
 <div className=' flex  flex-col space-y-4 gap-3 py-4'>
 {posts.map(post => {
@@ -49,16 +49,9 @@ const RightThird = ({allposts}) => {
         );
       })}
     </div>
- 
-
-
-
-  
-
-
 </div>
 
-</div>
+
   )
 }
 

@@ -52,7 +52,7 @@ const Home = () => {
             <div className='md:col-span-5  col-span-1'>
               <BreakingNewsSlider />
             </div>
-            <div className='md:col-span-3  col-span-1 px-2 h-[404px] w-[100%] mt-4 shadow-lg'>
+            <div className='md:col-span-3 my-7 md:my-0 col-span-1 px-2 h-[404px] w-[100%] shadow-lg'>
               <RightThird allPosts={allPosts} />
             </div>
           </div>

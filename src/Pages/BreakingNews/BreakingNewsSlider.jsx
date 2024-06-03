@@ -25,11 +25,11 @@ const BreakingNewsSlider = () => {
             {posts.map(post => (
                 <Link to={`/details/${post?.id}`} key={post?.id}>
                     <div className='' key={post?.id}>
-                        <div className="relative max-w-xl mx-auto mt-20">
-                            <img className="w-full h-[350px] object-cover rounded-md" src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title}/>
+                        <div className="relative max-w-xl mx-auto">
+                            <img className="w-full h-[410px] object-cover rounded-md" src={`https://admin.desh365.top/public/storage/post-image/${post.image}`} alt={post.title}/>
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 rounded-md"></div>
-                            <div className="absolute inset-20 flex items-center mt-40 justify-center">
-                                <h2 className="text-white text-xl font-bold">{post.title}</h2>
+                            <div className="absolute inset-20 flex items-center mt-0 justify-center">
+                                <h2 className="text-white md:text-xl text-sm font-bold">{post.title}</h2>
                             </div>
                         </div>
                     </div>
