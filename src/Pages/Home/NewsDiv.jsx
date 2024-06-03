@@ -18,25 +18,25 @@ const NewsDiv = () => {
        
         <th>BDT AUD</th>
         <th>0.01279</th>
-        <th>Bangladesh Taka to Australian Dollars</th>
+        {/* <th>Bangladesh Taka to Australian Dollars</th> */}
       </tr>
       <tr>
        
         <th>BDT EUR</th>
         <th>0.00785</th>
-        <th>Bangladesh Taka to Euros Dollars</th>
+        {/* <th>Bangladesh Taka to Euros Dollars</th> */}
       </tr>
       <tr>
        
         <th>BDT INR</th>
         <th>0.71301</th>
-        <th>Bangladesh Taka to Rupees Dollars</th>
+        {/* <th>Bangladesh Taka to Rupees Dollars</th> */}
       </tr>
       <tr>
        
         <th>USD BDT</th>
         <th>117.08437</th>
-        <th>Dollars to Bangladesh Taka</th>
+        {/* <th>Dollars to Bangladesh Taka</th> */}
       </tr>
     </thead>
     <tbody>

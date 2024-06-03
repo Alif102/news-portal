@@ -4,7 +4,7 @@ import Loader from '../Loader/Loader';
 import { Link } from 'react-router-dom';
 
 const CategoryCard = ({ category, data }) => (
-  <div className='col-span-4'>
+  <div className='col-span-4 '>
     <h1 className='font-bold text-xl'>{category}</h1>
     <div className='border-black my-3 border-b-4'></div>
     <div className='my-5'>
@@ -49,7 +49,7 @@ const Card = () => {
 
   return (
     <div>
-      <div className='border-[#D8D8D8] w-[100%] mx-auto my-6 border-b-4'></div>
+      <div className='border-[#D8D8D8] w-[94%]  mx-auto my-6 border-b-4'></div>
       <div className='grid md:grid-cols-12 md:mx-10 mx-2 gap-6 lg:grid-cols-12 grid-cols-1'>
         {loading ? (
           <Loader/>
