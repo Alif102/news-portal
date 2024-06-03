@@ -30,17 +30,17 @@ const Binodon = () => {
 
   return (
     <div>
-      <p className='font-bold text-xl m-6 ml-10'>বাণিজ্য</p>
+      <p className='font-bold md:pl-10 pl-2 my-6 text-2xl  '>বাণিজ্য</p>
 
       <div className='grid md:grid-cols-12 md:mx-10 mx-2 gap-6 lg:grid-cols-12 grid-cols-1'>
-
+      
 
         <div className='col-span-4'>
           {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
 
           {posts.length > 0 && (
             <div key={posts[0].id} className='space-y-4'>
-              <img className='w-[100%] h-full mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
+              <img className='w-[100%] h-[300px] mb-3' src={`https://admin.desh365.top/public/storage/post-image/${posts[0].image}`} alt={posts[0].title} />
               <h1 className='text-xl font-bold'>
                 {posts[0].title}
               </h1>
