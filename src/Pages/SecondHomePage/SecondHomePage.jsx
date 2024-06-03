@@ -15,7 +15,8 @@ const SecondHomePage = ({ related, postData }) => {
   
 
   const shareOnFacebook = () => {
-    const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
+    const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
+    // const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
   
     window.FB.ui({
       method: 'share',

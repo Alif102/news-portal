@@ -16,7 +16,7 @@ const NewsDiv = () => {
        
         <th>BDT AUD</th>
         <th>0.01279</th>
-        <th>Bangladesh Taka to Australian Dollars</th>
+        <th>Bangladesh Taka to Aus Dollars</th>
       </tr>
       <tr>
        
@@ -31,7 +31,21 @@ const NewsDiv = () => {
         <th>Bangladesh Taka to Rupees Dollars</th>
       </tr>
       <tr>
-       
+        <th>USD BDT</th>
+        <th>117.08437</th>
+        <th>Dollars to Bangladesh Taka</th>
+      </tr>
+      <tr>
+        <th>CAN BDT</th>
+        <th>0.01161</th>
+        <th>Canada to Bangladesh Taka</th>
+      </tr>
+      <tr>
+        <th>USD BDT</th>
+        <th>117.08437</th>
+        <th>Dollars to Bangladesh Taka</th>
+      </tr>
+      <tr>
         <th>USD BDT</th>
         <th>117.08437</th>
         <th>Dollars to Bangladesh Taka</th>
