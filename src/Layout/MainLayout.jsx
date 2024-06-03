@@ -6,6 +6,7 @@ import Card from "../Component/Card/Card"
 // import Sports from "../Component/Sports/Sports"
 import Sport from "../Component/Sports/Sport"
 import Home from "../Pages/Home/Home"
+import National from "../Pages/Home/RightSide/National"
 
 
 const MainLayout = () => {
@@ -16,8 +17,9 @@ const MainLayout = () => {
           
          
           <Home/>
-          
+          <National/>
           <Card/>
+          
 
           <Binodon/>
 

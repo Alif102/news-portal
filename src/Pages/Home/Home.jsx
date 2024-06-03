@@ -58,12 +58,12 @@ const Home = () => {
           </div>
 
           <Add />
-          <div className='grid  md:grid-cols-8 grid-cols-1 md:gap-4 gap-8 py-6'>
+          {/* <div className='grid  md:grid-cols-8 grid-cols-1 md:gap-4 gap-8 py-6'>
             <National />
             <div className='md:col-span-3 grid-cols-1'>
               <NewsTabs />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
