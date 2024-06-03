@@ -12,27 +12,48 @@ const SecondHomePage = ({ related, postData }) => {
   
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
  
-  
+
+
+ 
 
   const shareOnFacebook = () => {
     const cururl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
+    console.log(cururl)
     // const cururl = `https://www.bd24live.com/deadly-strikes-on-kharkiv-as-biden-lets-ukraine-use-us-arms-inside-russia/`;
+   const encodedUrl = encodeURIComponent(cururl);
+  const encodedTitle = encodeURIComponent(postData.title);
+
+  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedTitle}`;
   
     window.FB.ui({
+      
       method: 'share',
-      href: cururl,
+      href: shareUrl,
       quote: 'Your custom quote here', // Add your custom title here
       picture: imageUrl, // Use dynamic imageUrl here
     }, function(response) {
       // Optional callback function
+
     });
   };
-  
+ console.log(postData)
+
+
   
   return (
     <div>
+
+
       <Helmet>
+      
         <title>{postData.title}</title>
+        <meta property="og:title" content={postData.title} />
+        <meta property="og:description" content={postData.description} />
+        <meta property="og:image" content={imageUrl} />
+        <meta property="og:url" content={`https://news-portal-gray.vercel.app/details/${postData.id}`} />
+        <meta property="og:type" content="article" />
+    
+
       </Helmet>
       <ScrollToTopOnPageChange />
 
