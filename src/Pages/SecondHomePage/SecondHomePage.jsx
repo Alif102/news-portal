@@ -18,18 +18,27 @@ const SecondHomePage = ({ related, postData }) => {
     const encodedUrl = encodeURIComponent(curUrl);
     const encodedTitle = encodeURIComponent(postData.title);
     console.log( encodedTitle)
+    console.log( 'encodedUrl', encodedUrl)
     // Prepare image URL for Facebook sharing
     // const imageUrl = `https://admin.desh365.top/public/storage/post-image/${encodeURIComponent(postData.image)}`;
-  
-    window.FB.ui({
+    var shareParams = {
       method: 'share',
-      href: `https://news-portal-gray.vercel.app/details/${postData.id}`,
-      quote: postData.title,
+      href: curUrl,
+      quote: "hello",
       picture: imageUrl,
       hashtag: '#YourHashtag', 
       display: 'popup',
-      // redirect_uri: curUrl,  
-    }, function(response) {
+    };
+    
+    console.log("href:", shareParams.href);
+    console.log("quote:", shareParams.quote);
+    console.log("quote:", shareParams.picture);
+    console.log("quote:", shareParams.display);
+
+
+    window.FB.ui(
+      shareParams
+      , function(response) {
       if (response && !response.error_message) {
         console.log('Content shared successfully');
       } else {
