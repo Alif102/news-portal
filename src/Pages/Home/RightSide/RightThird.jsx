@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 
 const RightThird = ({allposts}) => {
  
-
-
   // Fetch Data
   const [posts, setPosts] = useState([]);
  
@@ -13,7 +11,7 @@ const RightThird = ({allposts}) => {
     const fetchPosts = async () => {
       try {
         const response = await axios.get('https://admin.desh365.top/api/all-post');
-        setPosts(response.data.data);
+        setPosts(response.data.data.slice(0, 10));
       } catch (error) {
         console.error('Error fetching the posts:', error);
       }
@@ -21,15 +19,7 @@ const RightThird = ({allposts}) => {
 
     fetchPosts();
   }, []);
-
-
- 
-
-
-
   return (
-  
-
 
 <div className=' w-[100%] h-[410px] py-4 shadow-lg overflow-x-scroll '>
 
