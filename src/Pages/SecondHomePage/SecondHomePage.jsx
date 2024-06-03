@@ -79,16 +79,11 @@ const SecondHomePage = ({ related, postData }) => {
     <div>
 
 
-      <Helmet>
-      
-        <title>{postData.title}</title>
+<Helmet>
         <meta property="og:title" content={postData.title} />
         <meta property="og:description" content={postData.description} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:url" content={curUrl} />
-        <meta property="og:type" content="article" />
-    
-
       </Helmet>
       <ScrollToTopOnPageChange />
 
