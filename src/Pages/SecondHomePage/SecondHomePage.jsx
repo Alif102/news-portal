@@ -32,8 +32,8 @@ const SecondHomePage = ({ related, postData }) => {
       method: 'share',
       href: encodedUrl,
       quote: "hello",
-      picture: imageUrl,
-      hashtag: '#YourHashtag', 
+      // picture: imageUrl,
+      hashtag: imageUrl, 
       display: 'popup',
     };
     
