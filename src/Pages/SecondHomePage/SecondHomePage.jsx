@@ -110,14 +110,14 @@ const SecondHomePage = ({ related, postData }) => {
               
               {/* Add */}
                 {/* <div className="flex items-center justify-center my-3 w-auto h-auto font-bold bg-[#D9D9D9]">ADD</div> */}
-                {/* <div data-type="_mgwidget" data-widget-id="1624970">
+                <div data-type="_mgwidget" data-widget-id="1624970">
                 </div>
 
                 <script>{(function (w, q) {
                   w[q] = w[q] || [];
                   w[q].push(["_mgc.load"]);
                 })(window, "_mgq")}
-                </script> */}
+                </script>
                 
                 <PostBody postBody={postData.post_body} />
                 <div className="flex items-center justify-center my-3 mx-auto w-[50%] h-[250px] font-bold bg-[#D9D9D9]">ADD</div>
