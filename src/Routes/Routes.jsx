@@ -4,6 +4,7 @@ import MainLayout from "../Layout/MainLayout";
 import CommonPage from "../Component/CommonPage/CommonPage";
 import DetailPage from "../Pages/SecondHomePage/DetailPage";
 import ErrorPage from "../Pages/ErrorPage/Errorpage";
+import IndexPage from "../Pages/IndexPage";
 
 
 
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       children : [
         {
           path : '/',
-          element : <MainLayout/>,
+          element : <IndexPage/>,
          
           
   

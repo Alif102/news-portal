@@ -10,6 +10,13 @@ import ScrollToTopOnPageChange from '../../Component/Shared/ScrollToTopOnPageCha
 
 const SecondHomePage = ({ related, postData }) => {
   
+
+
+    function shareOnFacebookkk() {
+      const url = window.location.href;
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, 'Share on Facebook', 'width=600,height=400');
+    }
+
   const imageUrl = `https://admin.desh365.top/public/storage/post-image/${postData.image}`;
  
   const curUrl = `https://news-portal-gray.vercel.app/details/${postData.id}`;
@@ -23,7 +30,7 @@ const SecondHomePage = ({ related, postData }) => {
     // const imageUrl = `https://admin.desh365.top/public/storage/post-image/${encodeURIComponent(postData.image)}`;
     var shareParams = {
       method: 'share',
-      href: curUrl,
+      href: encodedUrl,
       quote: "hello",
       picture: imageUrl,
       hashtag: '#YourHashtag', 

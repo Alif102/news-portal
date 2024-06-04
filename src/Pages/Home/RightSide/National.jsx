@@ -62,7 +62,6 @@ const National = () => {
 
 
         <div className='col-span-4'>
-          {/* <div className='w-[95%] h-[200px] mb-3 bg-[#D9D9D9]'></div> */}
 
           {posts.length > 0 && (
             <div key={posts[0].id} className=''>
