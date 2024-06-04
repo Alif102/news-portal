@@ -34,7 +34,7 @@ const NewsTabs = () => {
   );
 
   return (
-    <div className=" shadow-lg w-full mt-4 py-6 h-[490px]">
+    <div className=" shadow-lg w-full mt-4 py-6 h-[500px]">
       <div className="flex justify-evenly">
         <button
           className={`px-3 py-2 ${activeTab === 1 ? 'shadow-lg border border-black bg-gray-200 text-black' : 'shadow-xl bg-gray-200'}`}
@@ -60,7 +60,7 @@ const NewsTabs = () => {
           <div className="p-4">{activeTab === 1 ? renderPosts(posts) : renderPosts(posts.slice().reverse())}</div>
         )}
       </div>
-      <div className='shadow-lg w-full mt-4 h-8'>
+      <div className='border border-black w-full bg-gray-200 h-8'>
         <h1 className='text-center p-1 font-bold'>আজকের সব খবর</h1>
       </div>
     </div>
