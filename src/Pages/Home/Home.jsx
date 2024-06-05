@@ -9,32 +9,32 @@ import National from './RightSide/National';
 import BreakingNewsSlider from '../BreakingNews/BreakingNewsSlider';
 
 const Home = () => {
-  const [allPosts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [allPosts, setPosts] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        // Check if data exists in local storage
-        const cachedData = localStorage.getItem('allPosts');
-        if (cachedData) {
-          setPosts(JSON.parse(cachedData));
-          setIsLoading(false);
-        } else {
-          const response = await axios.get('https://admin.desh365.top/api/all-post');
-          setPosts(response.data.data);
-          setIsLoading(false);
-          // Cache the data in local storage
-          localStorage.setItem('allPosts', JSON.stringify(response.data.data));
-        }
-      } catch (error) {
-        console.error('Error fetching the posts:', error);
-        setIsLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       // Check if data exists in local storage
+  //       const cachedData = localStorage.getItem('allPosts');
+  //       if (cachedData) {
+  //         setPosts(JSON.parse(cachedData));
+  //         setIsLoading(false);
+  //       } else {
+  //         const response = await axios.get('https://admin.desh365.top/api/all-post');
+  //         setPosts(response.data.data);
+  //         setIsLoading(false);
+  //         // Cache the data in local storage
+  //         localStorage.setItem('allPosts', JSON.stringify(response.data.data));
+  //       }
+  //     } catch (error) {
+  //       console.error('Error fetching the posts:', error);
+  //       setIsLoading(false);
+  //     }
+  //   };
 
-    fetchPosts();
-  }, []);
+  //   fetchPosts();
+  // }, []);
 
   return (
     <div>
@@ -53,7 +53,7 @@ const Home = () => {
               <BreakingNewsSlider />
             </div>
             <div className='md:col-span-3 my-7 md:my-0 col-span-1 px-2 h-[404px] w-[100%] shadow-lg'>
-              <RightThird allPosts={allPosts} />
+              <RightThird  />
             </div>
           </div>
 

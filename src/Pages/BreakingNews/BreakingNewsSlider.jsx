@@ -9,9 +9,15 @@ const BreakingNewsSlider = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://admin.desh365.top/api/all-post');
-                const filteredPosts = response.data.data.filter(post => post.category_name === "ব্রেকিং নিউজ");
-                setPosts(filteredPosts);
+                const cachedData = localStorage.getItem('cachedBreakingNews');
+                if (cachedData) {
+                    setPosts(JSON.parse(cachedData));
+                } else {
+                    const response = await axios.get('https://admin.desh365.top/api/all-post');
+                    const filteredPosts = response.data.data.filter(post => post.category_name === "ব্রেকিং নিউজ");
+                    setPosts(filteredPosts);
+                    localStorage.setItem('cachedBreakingNews', JSON.stringify(filteredPosts));
+                }
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

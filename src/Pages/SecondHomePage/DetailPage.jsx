@@ -14,6 +14,7 @@ const DetailPage = () => {
     const fetchData = async () => {
       try {
         const cachedData = sessionStorage.getItem(`post_${id}`);
+        console.log(cachedData)
         if (cachedData) {
           const parsedData = JSON.parse(cachedData);
           setPostData(parsedData.postData);
